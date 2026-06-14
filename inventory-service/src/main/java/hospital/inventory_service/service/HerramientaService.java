@@ -16,14 +16,14 @@ public class HerramientaService {
         return herramientaRepository.findAll();
 
     }
-    public Herramienta findById(String id){
+    public Herramienta findById(Integer id){
         return herramientaRepository.findById(id).orElse(null);
     }
 
     public Herramienta save(Herramienta herramienta){
         return herramientaRepository.save(herramienta);
     }
-    public void deleteById(String id){
+    public void deleteById(Integer id){
         herramientaRepository.deleteById(id);
     }
 }

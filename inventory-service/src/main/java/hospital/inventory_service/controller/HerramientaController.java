@@ -17,20 +17,24 @@ public class HerramientaController {
     public List<Herramienta> findAll() {
         return herramientaService.findAll();
     }
+
     @GetMapping("/id")
-    public Herramienta findById(String id){
+    public Herramienta findById(Integer id) {
         return herramientaService.findById(id);
     }
+
     @PostMapping
     public Herramienta save(@RequestBody Herramienta herramienta) {
         return herramientaService.save(herramienta);
     }
+
     @PutMapping("/{id}")
-    public Herramienta update(@PathVariable String id, @RequestBody Herramienta herramienta) {
+    public Herramienta update(@PathVariable Integer id, @RequestBody Herramienta herramienta) {
         return herramientaService.save(herramienta);
     }
+
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable String id){
+    public void delete(@PathVariable Integer id) {
         herramientaService.deleteById(id);
     }
 }
