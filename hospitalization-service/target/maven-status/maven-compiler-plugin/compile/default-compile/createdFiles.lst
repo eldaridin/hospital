@@ -1,0 +1,8 @@
+com\hospital\hospitalization\config\SecurityConfig.class
+com\hospital\hospitalization\controller\HospitalizationController.class
+com\hospital\hospitalization\config\JwtTokenProvider.class
+com\hospital\hospitalization\config\JwtAuthenticationFilter.class
+com\hospital\hospitalization\repository\HospitalizationRepository.class
+com\hospital\hospitalization\HospitalizationApplication.class
+com\hospital\hospitalization\model\Hospitalization.class
+com\hospital\hospitalization\service\HospitalizationService.class

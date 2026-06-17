@@ -5,15 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="341d8247-392d-4017-9a6c-1c4023dc07f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/billing-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/hospital/billing/BillingApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/hospital/billing/controller/BillingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/hospital/billing/model/Invoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/hospital/billing/repository/InvoiceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/hospital/billing/service/BillingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/hospital-microservicios.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hospital-microservicios.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/notification-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/java/com/hospital/eureka/EurekaServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/java/com/hospital/eureka/EurekaServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalization-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/HospitalizationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/HospitalizationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/config/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/config/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/controller/HospitalizationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/controller/HospitalizationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/model/Hospitalization.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/model/Hospitalization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/repository/HospitalizationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/repository/HospitalizationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/service/HospitalizationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/service/HospitalizationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/NotificationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/NotificationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/config/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/config/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/controller/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/controller/NotificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/model/NotificationLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/model/NotificationLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/repository/NotificationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/repository/NotificationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/service/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/service/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +39,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -47,6 +64,21 @@
     &quot;accountId&quot;: &quot;ee35efad-b437-490a-9155-bdf54a96856c&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="delegateBuildToMaven" value="true" />
+    <option name="skipTests" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -60,23 +92,45 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.appointment-service [clean,install...].executor": "Run",
+    "Maven.auth-service [clean,install...].executor": "Run",
+    "Maven.billing-service [clean,install...].executor": "Run",
+    "Maven.doctor-service [clean,install...].executor": "Run",
+    "Maven.eureka-server [clean,install...].executor": "Run",
+    "Maven.eureka-server [install].executor": "Run",
+    "Maven.eureka-server [package].executor": "Run",
+    "Maven.hospitalization-service [clean,install...].executor": "Run",
+    "Maven.inventory-service [clean,install...].executor": "Run",
+    "Maven.notification-service [clean,install...].executor": "Run",
+    "Maven.patient-service [clean,install...].executor": "Run",
+    "Maven.pharmacy-service [clean,install...].executor": "Run",
+    "Maven.prescription-service [clean,install...].executor": "Run",
+    "Maven.prescription-service [install].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.PresciptionServiceApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "rama-cote",
+    "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/ELDARIDIN/Desktop/hospital-microservicios",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Cote/OneDrive/Escritorio/Ing Informatica/FULLSTACK/hospital/billing-service/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2850575",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -85,6 +139,108 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Cote\OneDrive\Escritorio\Ing Informatica\FULLSTACK\hospital\pharmacy-service" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="EurekaServerApplication" value="STOPPED" />
+              <entry key="PresciptionServiceApplication" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EurekaServerApplication">
+    <configuration name="AppointmentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="appointment-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hospital.appointment_service.AppointmentServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="auth-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hospital.auth_service.AuthServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BillingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="billing-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hospital.billing.BillingApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DoctorServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="doctor-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hospital.doctor_service.DoctorServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="eureka-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hospital.eureka.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HospitalizationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="hospitalization-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hospital.hospitalization.HospitalizationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="inventory-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hospital.inventory_service.InventoryServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotificationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="notification-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hospital.notification.NotificationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatientServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="patient-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hospital.patient_service.PatientServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PharmacyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="pharmacy-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hospital.pharmacy.PharmacyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PresciptionServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="prescription-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hospital.presciption_service.PresciptionServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -104,7 +260,11 @@
       <workItem from="1777655667987" duration="2000" />
       <workItem from="1777655681307" duration="4000" />
       <workItem from="1777655689153" duration="5000" />
-      <workItem from="1781645074558" duration="4401000" />
+      <workItem from="1781645074558" duration="8537000" />
+      <workItem from="1781653869772" duration="9189000" />
+      <workItem from="1781664916959" duration="2668000" />
+      <workItem from="1781668142845" duration="913000" />
+      <workItem from="1781670408729" duration="3435000" />
     </task>
     <servers />
   </component>
@@ -126,5 +286,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
