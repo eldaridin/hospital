@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="341d8247-392d-4017-9a6c-1c4023dc07f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/hospital-microservicios.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hospital-microservicios.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/notification-service/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/java/com/hospital/eureka/EurekaServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/java/com/hospital/eureka/EurekaServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hospitalization-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/HospitalizationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/HospitalizationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/config/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/config/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/controller/HospitalizationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/controller/HospitalizationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/model/Hospitalization.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/model/Hospitalization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/repository/HospitalizationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/repository/HospitalizationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/service/HospitalizationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/service/HospitalizationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/NotificationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/NotificationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/config/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/config/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/controller/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/controller/NotificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/model/NotificationLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/model/NotificationLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/repository/NotificationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/repository/NotificationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/service/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/hospital/notification/service/NotificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,10 +40,10 @@
     &quot;accountId&quot;: &quot;ee35efad-b437-490a-9155-bdf54a96856c&quot;
   }
 }</component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -78,6 +54,10 @@
   <component name="MavenRunner">
     <option name="delegateBuildToMaven" value="true" />
     <option name="skipTests" value="true" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -111,6 +91,7 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -119,11 +100,12 @@
     "Spring Boot.PresciptionServiceApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "rama-cote",
+    "git-widget-placeholder": "Rama__Dario",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/ELDARIDIN/Desktop/hospital-microservicios",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Cote/OneDrive/Escritorio/Ing Informatica/FULLSTACK/hospital/billing-service/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Project",
