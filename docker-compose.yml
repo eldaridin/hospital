@@ -98,3 +98,11 @@ services:
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
 
+  hospitalization-service:
+    build: ./hospitalization-service
+    ports:
+      - "8010:8010"
+    depends_on:
+      - eureka-server
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka/
