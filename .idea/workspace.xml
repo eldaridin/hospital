@@ -9,7 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="341d8247-392d-4017-9a6c-1c4023dc07f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +21,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="178" />
+    <option name="cachedIndexableFilesCount" value="179" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -155,59 +154,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Maven.appointment-service [clean,install...].executor": "Run",
-    "Maven.auth-service [clean,install...].executor": "Run",
-    "Maven.billing-service [clean,install...].executor": "Run",
-    "Maven.doctor-service [clean,install...].executor": "Run",
-    "Maven.doctor-service [install].executor": "Run",
-    "Maven.eureka-server [clean,install...].executor": "Run",
-    "Maven.eureka-server [install].executor": "Run",
-    "Maven.eureka-server [package].executor": "Run",
-    "Maven.hospitalization-service [clean,install...].executor": "Run",
-    "Maven.inventory-service [clean,install...].executor": "Run",
-    "Maven.notification-service [clean,install...].executor": "Run",
-    "Maven.patient-service [clean,install...].executor": "Run",
-    "Maven.pharmacy-service [clean,install...].executor": "Run",
-    "Maven.prescription-service [clean,install...].executor": "Run",
-    "Maven.prescription-service [install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.DoctorServiceApplication.executor": "Debug",
-    "Spring Boot.EurekaServerApplication.executor": "Run",
-    "Spring Boot.PresciptionServiceApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "copilot.chat.legacySessionMetadata.migrated": "true",
-    "git-widget-placeholder": "Rama__Dario",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ELDARIDIN/Desktop/hospital-microservicios",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/Cote/OneDrive/Escritorio/Ing Informatica/FULLSTACK/hospital/billing-service/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2850575",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "ml.llm.AcpAgentsConfigurable",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Maven.appointment-service [clean,install...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.auth-service [clean,install...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.billing-service [clean,install...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.doctor-service [clean,install...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.doctor-service [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.eureka-server [clean,install...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.eureka-server [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.eureka-server [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.hospitalization-service [clean,install...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.inventory-service [clean,install...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.notification-service [clean,install...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.patient-service [clean,install...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.pharmacy-service [clean,install...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.prescription-service [clean,install...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.prescription-service [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DoctorServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PresciptionServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Rama__Dario&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ELDARIDIN/Desktop/hospital-microservicios&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Cote/OneDrive/Escritorio/Ing Informatica/FULLSTACK/hospital/billing-service/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2850575&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AcpAgentsConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Cote\OneDrive\Escritorio\Ing Informatica\FULLSTACK\hospital\pharmacy-service" />
@@ -315,7 +314,9 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
   </component>
@@ -345,6 +346,7 @@
       <workItem from="1782170799617" duration="215000" />
       <workItem from="1782225691825" duration="436000" />
       <workItem from="1782226296989" duration="4381000" />
+      <workItem from="1782230731487" duration="28000" />
     </task>
     <servers />
   </component>
