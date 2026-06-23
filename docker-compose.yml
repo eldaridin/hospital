@@ -80,3 +80,21 @@ services:
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
 
+  notification-service:
+    build: ./notification-service
+    ports:
+      - "8088:8088"
+    depends_on:
+      - eureka-server
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka/
+
+  billing-service:
+    build: ./billing-service
+    ports:
+      - "8089:8089"
+    depends_on:
+      - eureka-server
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka/
+

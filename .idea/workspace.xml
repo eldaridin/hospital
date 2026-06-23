@@ -8,36 +8,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="341d8247-392d-4017-9a6c-1c4023dc07f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/hospitalization-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/hospital/api_gateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/hospital/api_gateway/ApiGatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/hospital/auth_service/AuthServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/hospital/auth_service/AuthServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/hospital/billing/BillingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/hospital/billing/BillingApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/hospital/appointment_service/client/DoctorClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/hospital/appointment_service/client/DoctorClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/hospital/appointment_service/client/PacienteClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/hospital/appointment_service/client/PacienteClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/doctor-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor-service/src/main/java/com/hospital/doctor_service/DoctorServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctor-service/src/main/java/com/hospital/doctor_service/DoctorServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server-1.0.0.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hospitalization-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/HospitalizationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/java/com/hospital/hospitalization/HospitalizationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/hospital/inventory_service/InventoryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/hospital/inventory_service/InventoryServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/hospital/patient_service/PatientServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/hospital/patient_service/PatientServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pharmacy-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pharmacy-service/src/main/java/com/hospital/pharmacy/PharmacyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy-service/src/main/java/com/hospital/pharmacy/PharmacyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pharmacy-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescription-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/prescription-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescription-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/prescription-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/ELDARIDIN/Desktop/hospital-microservicios-main" value="3D8FD0OKl9DMAlbw0yemfdArdfn" />
+    </persistenceIdMap>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="178" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,7 +55,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Angellssj/hospital-microservicios.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/eldaridin/hospital.git&quot;,
     &quot;accountId&quot;: &quot;ee35efad-b437-490a-9155-bdf54a96856c&quot;
   }
 }</component>
@@ -85,6 +77,65 @@
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0000014268836095" />
+      <entry key="S60" value="1.0049254020725262" />
+      <entry key="M2" value="1.3580206812910984" />
+      <entry key="M5" value="6.161419233609399" />
+      <entry key="M10" value="14.033605931638647" />
+      <entry key="M15" value="19.445490846145027" />
+      <entry key="M30" value="29.47344512957752" />
+      <entry key="H1" value="38.85856218419979" />
+      <entry key="H2" value="45.77023353440417" />
+      <entry key="H4" value="50.042255605184884" />
+      <entry key="D1" value="54.12073846388405" />
+      <entry key="W1" value="54.87301763085495" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="1.590983723383369E-94" />
+      <entry key="S5" value="5.236514565420613E-38" />
+      <entry key="S10" value="3.891303280257395E-19" />
+      <entry key="S30" value="1.7270133703368025E-6" />
+      <entry key="S60" value="0.003235986295308232" />
+      <entry key="M2" value="0.1690738457055734" />
+      <entry key="M5" value="2.0132244700924447" />
+      <entry key="M10" value="4.743704633039132" />
+      <entry key="M15" value="6.377843642022825" />
+      <entry key="M30" value="8.669020486584095" />
+      <entry key="H1" value="10.169981011823488" />
+      <entry key="H2" value="11.038154075149661" />
+      <entry key="H4" value="11.506540082500116" />
+      <entry key="D1" value="11.915938937619588" />
+      <entry key="W1" value="11.98794571767528" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9395227492140118" />
+      <entry key="MS500" value="0.9876008614453725" />
+      <entry key="S2" value="0.9968856972203758" />
+      <entry key="S5" value="0.9987531130852756" />
+      <entry key="S10" value="0.9993763620805105" />
+      <entry key="S30" value="0.9997951717135388" />
+      <entry key="S60" value="1.00798054708427" />
+      <entry key="M2" value="1.524523792042903" />
+      <entry key="M5" value="8.160484311890988" />
+      <entry key="M10" value="18.759733877383255" />
+      <entry key="M15" value="25.807366856305723" />
+      <entry key="M30" value="38.13151978260802" />
+      <entry key="H1" value="49.02211135608461" />
+      <entry key="H2" value="56.80489664819785" />
+      <entry key="H4" value="61.54697634825354" />
+      <entry key="D1" value="66.03636344902698" />
+      <entry key="W1" value="66.86091822899154" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -113,10 +164,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "Maven.appointment-service [clean,install...].executor": "Run",
     "Maven.auth-service [clean,install...].executor": "Run",
     "Maven.billing-service [clean,install...].executor": "Run",
     "Maven.doctor-service [clean,install...].executor": "Run",
+    "Maven.doctor-service [install].executor": "Run",
     "Maven.eureka-server [clean,install...].executor": "Run",
     "Maven.eureka-server [install].executor": "Run",
     "Maven.eureka-server [package].executor": "Run",
@@ -137,15 +190,19 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.DoctorServiceApplication.executor": "Debug",
     "Spring Boot.EurekaServerApplication.executor": "Run",
     "Spring Boot.PresciptionServiceApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
     "git-widget-placeholder": "Rama__Dario",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/ELDARIDIN/Desktop/hospital-microservicios",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Cote/OneDrive/Escritorio/Ing Informatica/FULLSTACK/hospital/billing-service/src/main/java/org/example/Main.java",
@@ -153,7 +210,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2850575",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "settings.editor.selected.configurable": "ml.llm.AcpAgentsConfigurable",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -185,7 +242,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.EurekaServerApplication">
+  <component name="RunManager" selected="Spring Boot.DoctorServiceApplication">
     <configuration name="AppointmentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="appointment-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.hospital.appointment_service.AppointmentServiceApplication" />
@@ -264,12 +321,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
       </set>
     </attachedChunks>
   </component>
@@ -288,11 +349,29 @@
       <workItem from="1781664916959" duration="2668000" />
       <workItem from="1781668142845" duration="913000" />
       <workItem from="1781670408729" duration="3435000" />
+      <workItem from="1782170799617" duration="215000" />
+      <workItem from="1782225691825" duration="436000" />
+      <workItem from="1782226296989" duration="4174000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.validation:jakarta.validation-api" />
+    <option featureType="dependencySupport" implementationName="java:io.projectreactor:reactor-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.cloud:spring-cloud-context" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.ws.rs:jakarta.ws.rs-api" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
