@@ -8,44 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="341d8247-392d-4017-9a6c-1c4023dc07f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api-gateway/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/hospital/api_gateway/filter/LoggingGlobalFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appointment-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctor-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hospitalization-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/patient-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pharmacy-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prescription-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/render.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/render/docker/api-gateway.Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/render/docker/appointment-service.Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/render/docker/auth-service.Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/render/docker/billing-service.Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/render/docker/doctor-service.Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/render/docker/hospitalization-service.Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/render/docker/inventory-service.Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/render/docker/notification-service.Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/render/docker/patient-service.Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/render/docker/pharmacy-service.Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/render/docker/prescription-service.Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/hospital/api_gateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/hospital/api_gateway/ApiGatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/hospital/appointment_service/AppointmentServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/hospital/appointment_service/AppointmentServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctor-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/doctor-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/hospital/inventory_service/InventoryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/hospital/inventory_service/InventoryServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/hospital/inventory_service/controller/HerramientaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/hospital/inventory_service/controller/HerramientaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/hospital/api_gateway/filter/LoggingGlobalFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/hospital/api_gateway/filter/LoggingGlobalFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server-1.0.0.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescription-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/prescription-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,60 +84,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000000000000346" />
-      <entry key="S2" value="1.0004316082439004" />
-      <entry key="S5" value="1.0455511115537006" />
-      <entry key="S10" value="1.2419240814840729" />
-      <entry key="S30" value="2.3302990963172094" />
-      <entry key="S60" value="3.8721051035981238" />
-      <entry key="M2" value="5.950163631506547" />
-      <entry key="M5" value="12.138142843896148" />
-      <entry key="M10" value="30.60619368276565" />
-      <entry key="M15" value="55.177541718583335" />
-      <entry key="M30" value="127.05716625223184" />
-      <entry key="H1" value="222.02073762103407" />
-      <entry key="H2" value="308.9689331449291" />
-      <entry key="H4" value="370.27053418471826" />
-      <entry key="D1" value="434.42742122804174" />
-      <entry key="W1" value="446.87895337110075" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000000000000002" />
+      <entry key="S5" value="1.0000008118520824" />
+      <entry key="S10" value="1.0017215971525697" />
+      <entry key="S30" value="1.3003876740322993" />
+      <entry key="S60" value="2.2250512632546964" />
+      <entry key="M2" value="4.341799648707218" />
+      <entry key="M5" value="10.708546631447735" />
+      <entry key="M10" value="20.31255029768669" />
+      <entry key="M15" value="28.298321671007933" />
+      <entry key="M30" value="58.021960205056416" />
+      <entry key="H1" value="134.42166838362837" />
+      <entry key="H2" value="245.3730954217471" />
+      <entry key="H4" value="346.30276023283415" />
+      <entry key="D1" value="471.03856310160796" />
+      <entry key="W1" value="497.43417510535534" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="1.6998696469321503E-126" />
-      <entry key="S5" value="5.187562069423131E-51" />
-      <entry key="S10" value="9.255460030058365E-26" />
-      <entry key="S30" value="8.568566067404612E-9" />
-      <entry key="S60" value="1.5841802352232416E-4" />
-      <entry key="M2" value="0.021736495773226634" />
-      <entry key="M5" value="0.41774104370359283" />
-      <entry key="M10" value="1.1416240923445578" />
-      <entry key="M15" value="1.7520898611799496" />
-      <entry key="M30" value="4.146906215997352" />
-      <entry key="H1" value="9.189730943387694" />
-      <entry key="H2" value="15.072407177850009" />
-      <entry key="H4" value="19.687120517764075" />
-      <entry key="D1" value="24.804878788307374" />
-      <entry key="W1" value="25.825384006340958" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="2.4519643159920624E-166" />
+      <entry key="S30" value="1.1856236715862267E-55" />
+      <entry key="S60" value="5.892830462382047E-28" />
+      <entry key="M2" value="4.192269650153872E-14" />
+      <entry key="M5" value="8.610155970831959E-6" />
+      <entry key="M10" value="0.00518292662995194" />
+      <entry key="M15" value="0.048038672789825536" />
+      <entry key="M30" value="0.6866596464890903" />
+      <entry key="H1" value="3.739482044424522" />
+      <entry key="H2" value="9.614726746043285" />
+      <entry key="H4" value="15.723867079367714" />
+      <entry key="D1" value="23.892777373827442" />
+      <entry key="W1" value="25.687535219618677" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9395227492140118" />
-      <entry key="MS500" value="0.9876008614454067" />
-      <entry key="S2" value="0.9973158122030563" />
-      <entry key="S5" value="1.0442406071627668" />
-      <entry key="S10" value="1.2411204576669972" />
-      <entry key="S30" value="2.3297307429934504" />
-      <entry key="S60" value="3.8717735606741597" />
-      <entry key="M2" value="5.971387630915815" />
-      <entry key="M5" value="12.55448692184827" />
-      <entry key="M10" value="31.745557229379557" />
-      <entry key="M15" value="56.92634281414801" />
-      <entry key="M30" value="131.19771082945903" />
-      <entry key="H1" value="231.20256280925454" />
-      <entry key="H2" value="324.03480316931467" />
-      <entry key="H4" value="389.9534078564088" />
-      <entry key="D1" value="459.23141537660393" />
-      <entry key="W1" value="472.7042060199677" />
+      <entry key="MS100" value="0.12327908806166991" />
+      <entry key="MS500" value="0.6579272625145041" />
+      <entry key="S2" value="0.9006259798479295" />
+      <entry key="S5" value="0.9589990023307702" />
+      <entry key="S10" value="0.9810048046762171" />
+      <entry key="S30" value="1.293356448557562" />
+      <entry key="S60" value="2.221405690108202" />
+      <entry key="M2" value="4.339820597626005" />
+      <entry key="M5" value="10.707595164830364" />
+      <entry key="M10" value="20.317147274008185" />
+      <entry key="M15" value="28.34584649042856" />
+      <entry key="M30" value="58.707325347265545" />
+      <entry key="H1" value="138.15780297367365" />
+      <entry key="H2" value="254.9835839853227" />
+      <entry key="H4" value="362.02320056594795" />
+      <entry key="D1" value="494.93048244361694" />
+      <entry key="W1" value="523.1215788198888" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -223,7 +195,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;Spring Boot.DoctorServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Debug&quot;,
     &quot;Spring Boot.PresciptionServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
@@ -242,13 +214,14 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2850575&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AcpAgentsConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ELDARIDIN\Desktop\hospital\doctor-service\src\main\java" />
       <recent name="C:\Users\Cote\OneDrive\Escritorio\Ing Informatica\FULLSTACK\hospital\pharmacy-service" />
     </key>
   </component>
@@ -274,7 +247,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ApiGatewayApplication">
+  <component name="RunManager" selected="Spring Boot.DoctorServiceApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hospital.api_gateway.ApiGatewayApplication" />
       <module name="hospital" />
@@ -414,7 +387,8 @@
       <workItem from="1782351428468" duration="1657000" />
       <workItem from="1782355490082" duration="1627000" />
       <workItem from="1782357389156" duration="760000" />
-      <workItem from="1782404555608" duration="2676000" />
+      <workItem from="1782404555608" duration="6945000" />
+      <workItem from="1782419985288" duration="1460000" />
     </task>
     <servers />
   </component>
