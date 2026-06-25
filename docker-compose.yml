@@ -1,4 +1,33 @@
 services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: hospital_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - mysql_data;
+
   eureka-server:
     build: ./eureka-server
     ports:
@@ -95,6 +124,7 @@ services:
       - "8089:8089"
     depends_on:
       - eureka-server
+      - pharmacy-service
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
 
@@ -104,5 +134,6 @@ services:
       - "8010:8010"
     depends_on:
       - eureka-server
+      - prescription-service
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/

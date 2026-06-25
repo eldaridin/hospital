@@ -1,0 +1,93 @@
+# Render Blueprint educativo (Free): 6 Web Services públicos.
+# Reemplazar TU-PREFIJO por un identificador corto y único.
+# Eureka se conserva para Docker local, pero se desactiva en Render Free.
+services:
+  - type: web
+    name: HospitalApp-hospital-patient
+    runtime: docker
+    plan: free
+    dockerfilePath: ./render/docker/api-gateway.Dockerfile
+    dockerContext: .
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: EUREKA_ENABLED
+        value: false
+
+  - type: web
+    name: HospitalApp-hospital-doctor
+    runtime: docker
+    plan: free
+    dockerfilePath: ./render/docker/producto-service.Dockerfile
+    dockerContext: .
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: EUREKA_ENABLED
+        value: false
+
+  - type: web
+    name: HospitalApp-hospital-appointment
+    runtime: docker
+    plan: free
+    dockerfilePath: ./render/docker/pedido-service.Dockerfile
+    dockerContext: .
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: EUREKA_ENABLED
+        value: false
+      - key: APP_DISCOVERY_ENABLED
+        value: false
+      - key: CLIENTE_SERVICE_URL
+        value: https://TU-PREFIJO-fullstack-cliente.onrender.com
+      - key: PRODUCTO_SERVICE_URL
+        value: https://TU-PREFIJO-fullstack-producto.onrender.com
+
+  - type: web
+    name: HospitalApp-hospital-prescription
+    runtime: docker
+    plan: free
+    dockerfilePath: ./render/docker/pago-service.Dockerfile
+    dockerContext: .
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: EUREKA_ENABLED
+        value: false
+      - key: APP_DISCOVERY_ENABLED
+        value: false
+      - key: PEDIDO_SERVICE_URL
+        value: https://TU-PREFIJO-fullstack-pedido.onrender.com
+
+  - type: web
+    name: HospitalApp-hospital-despacho
+    runtime: docker
+    plan: free
+    dockerfilePath: ./render/docker/despacho-service.Dockerfile
+    dockerContext: .
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: EUREKA_ENABLED
+        value: false
+      - key: APP_DISCOVERY_ENABLED
+        value: false
+      - key: PEDIDO_SERVICE_URL
+        value: https://TU-PREFIJO-fullstack-pedido.onrender.com
+
+  - type: web
+    name: HospitalApp-hospital-gateway
+    runtime: docker
+    plan: free
+    dockerfilePath: ./render/docker/api-gateway.Dockerfile
+    dockerContext: .
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: EUREKA_ENABLED
+        value: false
+      - key: CLIENTE_SERVICE_URL
+        value: https://TU-PREFIJO-fullstack-cliente.onrender.com
+      - key: PRODUCTO_SERVICE_URL
+        value: https://TU-PREFIJO-fullstack-producto.onrender.com
+      - key: PEDIDO_SERVICE_URL
+        value: https://TU-PREFIJO-fullstack-pedido.onrender.com
+      - key: PAGO_SERVICE_URL
+        value: https://TU-PREFIJO-fullstack-pago.onrender.com
+      - key: DESPACHO_SERVICE_URL
+        value: https://TU-PREFIJO-fullstack-despacho.onrender.com

@@ -4,11 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="BackgroundAgentGlobalSettings">
-    <option name="selectedModelId" value="claude-haiku-4.5" />
+    <option name="selectedModelId" value="auto" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="341d8247-392d-4017-9a6c-1c4023dc07f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/api-gateway/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/hospital/api_gateway/filter/LoggingGlobalFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appointment-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/billing-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doctor-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-server/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hospitalization-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patient-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prescription-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/render.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/render/docker/api-gateway.Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/render/docker/appointment-service.Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/render/docker/auth-service.Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/render/docker/billing-service.Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/render/docker/doctor-service.Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/render/docker/hospitalization-service.Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/render/docker/inventory-service.Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/render/docker/notification-service.Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/render/docker/patient-service.Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/render/docker/pharmacy-service.Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/render/docker/prescription-service.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/hospital/api_gateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/hospital/api_gateway/ApiGatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/hospital/appointment_service/AppointmentServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/hospital/appointment_service/AppointmentServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/doctor-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/hospital/inventory_service/InventoryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/hospital/inventory_service/InventoryServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/hospital/inventory_service/controller/HerramientaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/hospital/inventory_service/controller/HerramientaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,16 +54,18 @@
   </component>
   <component name="CopilotPersistence">
     <persistenceIdMap>
+      <entry key="_C:/Users/ELDARIDIN/Desktop/hospital" value="3FYDlag8gL1b7JaU5RSZQBDvDFg" />
       <entry key="_C:/Users/ELDARIDIN/Desktop/hospital-microservicios-main" value="3D8FD0OKl9DMAlbw0yemfdArdfn" />
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="179" />
+    <option name="cachedIndexableFilesCount" value="184" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Dockerfile" />
         <option value="Class" />
       </list>
     </option>
@@ -73,60 +112,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000459364853955" />
-      <entry key="S2" value="1.0832470716873381" />
-      <entry key="S5" value="1.4943633186688428" />
-      <entry key="S10" value="2.556182747887803" />
-      <entry key="S30" value="7.023081271101532" />
-      <entry key="S60" value="10.353817528903111" />
-      <entry key="M2" value="12.998936718767391" />
-      <entry key="M5" value="17.60184490714712" />
-      <entry key="M10" value="25.074887736104834" />
-      <entry key="M15" value="30.815730396920117" />
-      <entry key="M30" value="41.899189946814055" />
-      <entry key="H1" value="52.47490355729592" />
-      <entry key="H2" value="60.35723045536126" />
-      <entry key="H4" value="65.26710933060201" />
-      <entry key="D1" value="69.98059213694933" />
-      <entry key="W1" value="70.85270757075283" />
+      <entry key="MS500" value="1.0000000000000346" />
+      <entry key="S2" value="1.0004316082439004" />
+      <entry key="S5" value="1.0455511115537006" />
+      <entry key="S10" value="1.2419240814840729" />
+      <entry key="S30" value="2.3302990963172094" />
+      <entry key="S60" value="3.8721051035981238" />
+      <entry key="M2" value="5.950163631506547" />
+      <entry key="M5" value="12.138142843896148" />
+      <entry key="M10" value="30.60619368276565" />
+      <entry key="M15" value="55.177541718583335" />
+      <entry key="M30" value="127.05716625223184" />
+      <entry key="H1" value="222.02073762103407" />
+      <entry key="H2" value="308.9689331449291" />
+      <entry key="H4" value="370.27053418471826" />
+      <entry key="D1" value="434.42742122804174" />
+      <entry key="W1" value="446.87895337110075" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="7.3523343347067655E-25" />
-      <entry key="MS500" value="1.4938229635835485E-5" />
-      <entry key="S2" value="0.08226481473798905" />
-      <entry key="S5" value="0.664934381128844" />
-      <entry key="S10" value="1.5638992408181227" />
-      <entry key="S30" value="3.212359363140793" />
-      <entry key="S60" value="3.974141260672315" />
-      <entry key="M2" value="4.475729379953709" />
-      <entry key="M5" value="5.749289228364548" />
-      <entry key="M10" value="8.193183404542255" />
-      <entry key="M15" value="9.939357221066448" />
-      <entry key="M30" value="12.649997497164854" />
-      <entry key="H1" value="14.558410616813084" />
-      <entry key="H2" value="15.702286550209585" />
-      <entry key="H4" value="16.33041479702844" />
-      <entry key="D1" value="16.885384547453402" />
-      <entry key="W1" value="16.983550557612404" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="1.6998696469321503E-126" />
+      <entry key="S5" value="5.187562069423131E-51" />
+      <entry key="S10" value="9.255460030058365E-26" />
+      <entry key="S30" value="8.568566067404612E-9" />
+      <entry key="S60" value="1.5841802352232416E-4" />
+      <entry key="M2" value="0.021736495773226634" />
+      <entry key="M5" value="0.41774104370359283" />
+      <entry key="M10" value="1.1416240923445578" />
+      <entry key="M15" value="1.7520898611799496" />
+      <entry key="M30" value="4.146906215997352" />
+      <entry key="H1" value="9.189730943387694" />
+      <entry key="H2" value="15.072407177850009" />
+      <entry key="H4" value="19.687120517764075" />
+      <entry key="D1" value="24.804878788307374" />
+      <entry key="W1" value="25.825384006340958" />
     </decayedSelected>
     <decayedShown>
       <entry key="MS100" value="0.9395227492140118" />
-      <entry key="MS500" value="0.9876472182691803" />
-      <entry key="S2" value="1.1274872038313168" />
-      <entry key="S5" value="2.032758303794563" />
-      <entry key="S10" value="3.9496678861035974" />
-      <entry key="S30" value="10.081810933277579" />
-      <entry key="S60" value="14.222661317805185" />
-      <entry key="M2" value="17.411933912076815" />
-      <entry key="M5" value="23.316569548553616" />
-      <entry key="M10" value="33.24147187883573" />
-      <entry key="M15" value="40.732855348665865" />
-      <entry key="M30" value="54.53458599244184" />
-      <entry key="H1" value="67.02479579238515" />
-      <entry key="H2" value="76.05489506439477" />
-      <entry key="H4" value="81.59511389854262" />
-      <entry key="D1" value="86.86556039501471" />
-      <entry key="W1" value="87.83619829033883" />
+      <entry key="MS500" value="0.9876008614454067" />
+      <entry key="S2" value="0.9973158122030563" />
+      <entry key="S5" value="1.0442406071627668" />
+      <entry key="S10" value="1.2411204576669972" />
+      <entry key="S30" value="2.3297307429934504" />
+      <entry key="S60" value="3.8717735606741597" />
+      <entry key="M2" value="5.971387630915815" />
+      <entry key="M5" value="12.55448692184827" />
+      <entry key="M10" value="31.745557229379557" />
+      <entry key="M15" value="56.92634281414801" />
+      <entry key="M30" value="131.19771082945903" />
+      <entry key="H1" value="231.20256280925454" />
+      <entry key="H2" value="324.03480316931467" />
+      <entry key="H4" value="389.9534078564088" />
+      <entry key="D1" value="459.23141537660393" />
+      <entry key="W1" value="472.7042060199677" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -143,10 +182,10 @@
         <option name="model">
           <model>
             <option name="modelType" value="builtin_family" />
-            <option name="modelValue" value="claude-haiku-4.5" />
+            <option name="modelValue" value="auto" />
           </model>
         </option>
-        <option name="targetType" value="LOCAL" />
+        <option name="targetType" value="BACKGROUND" />
       </template>
     </option>
   </component>
@@ -157,6 +196,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Application.ApiGatewayApplication.executor&quot;: &quot;Debug&quot;,
     &quot;Maven.appointment-service [clean,install...].executor&quot;: &quot;Run&quot;,
     &quot;Maven.auth-service [clean,install...].executor&quot;: &quot;Run&quot;,
     &quot;Maven.billing-service [clean,install...].executor&quot;: &quot;Run&quot;,
@@ -192,13 +232,13 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ELDARIDIN/Desktop/hospital-microservicios&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ELDARIDIN/Desktop/hospital&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Cote/OneDrive/Escritorio/Ing Informatica/FULLSTACK/hospital/billing-service/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2850575&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
@@ -234,7 +274,20 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.DoctorServiceApplication">
+  <component name="RunManager" selected="Application.ApiGatewayApplication">
+    <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hospital.api_gateway.ApiGatewayApplication" />
+      <module name="hospital" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hospital.api_gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppointmentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="appointment-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.hospital.appointment_service.AppointmentServiceApplication" />
@@ -319,6 +372,11 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ApiGatewayApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -347,6 +405,16 @@
       <workItem from="1782225691825" duration="436000" />
       <workItem from="1782226296989" duration="4381000" />
       <workItem from="1782230731487" duration="28000" />
+      <workItem from="1782243261756" duration="785000" />
+      <workItem from="1782246327127" duration="1912000" />
+      <workItem from="1782310955428" duration="663000" />
+      <workItem from="1782312453558" duration="1961000" />
+      <workItem from="1782320018832" duration="2075000" />
+      <workItem from="1782329091375" duration="1617000" />
+      <workItem from="1782351428468" duration="1657000" />
+      <workItem from="1782355490082" duration="1627000" />
+      <workItem from="1782357389156" duration="760000" />
+      <workItem from="1782404555608" duration="2676000" />
     </task>
     <servers />
   </component>
