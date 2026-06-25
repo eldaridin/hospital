@@ -1,107 +1,192 @@
-# Sistema Hospitalario con Microservicios
+# 🏥 Sistema Hospitalario con Microservicios
 
-Sistema modular de gestión hospitalaria desarrollado con arquitectura de microservicios en **Java Spring Boot**. El proyecto está en fase preliminar y será expandido con funcionalidades adicionales.
+Sistema modular y escalable de gestión hospitalaria desarrollado con **arquitectura de microservicios** en **Java Spring Boot**. Implementa patrones de comunicación inter-servicios, autenticación JWT y persistencia de datos distribuida.
+
+---
 
 ## 📋 Tabla de Contenidos
 
+- [Descripción General](#descripción-general)
+- [Arquitectura del Proyecto](#arquitectura-del-proyecto)
 - [Microservicios Implementados](#microservicios-implementados)
 - [Puertos y Configuración](#puertos-y-configuración)
-- [Rutas Principales del Gateway](#rutas-principales-del-gateway)
-- [Documentación Swagger](#documentación-swagger)
+- [Documentación API](#documentación-api)
 - [Instrucciones de Ejecución](#instrucciones-de-ejecución)
+- [Despliegue con Docker](#despliegue-con-docker)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Roadmap Futuro](#roadmap-futuro)
+- [Contribuciones](#contribuciones)
+
+---
+
+## 📖 Descripción General
+
+Este proyecto implementa un sistema completo de gestión hospitalaria donde cada funcionalidad crítica se ejecuta como un microservicio independiente. Esto permite:
+
+✅ **Escalabilidad**: Cada servicio puede escalar de forma independiente  
+✅ **Mantenibilidad**: Equipos pueden desarrollar servicios en paralelo  
+✅ **Resiliencia**: Un fallo en un servicio no derriba todo el sistema  
+✅ **Flexibilidad**: Fácil actualización individual de componentes  
+
+---
+
+## 🏗️ Arquitectura del Proyecto
+
+```
+hospital/
+├── patient-service/           (Gestión de pacientes)
+├── appointment-service/       (Citas médicas con OpenFeign)
+├── doctor-service/            (Base de datos de médicos)
+├── auth-service/              (Autenticación JWT - Kotlin)
+├── prescription-service/      (Gestión de prescripciones)
+├── inventory-service/         (Control de recursos)
+├── api-gateway/               (En desarrollo)
+├── docker-compose.yml
+├── pom.xml                    (Padre)
+└── README.md
+```
+
+**Composición del código:**
+- **Java**: 94.7%
+- **Docker**: 5.3%
+
+---
 
 ## 🏥 Microservicios Implementados
 
-| Servicio | Descripción | Puerto | Tecnología |
-|----------|-------------|--------|-----------|
-| **Patient Service** | Gestión de pacientes | 8081 | Spring Boot 4.0.6 |
-| **Appointment Service** | Gestión de citas médicas | 8082 | Spring Boot 4.0.6 |
-| **Doctor Service** | Gestión de médicos | 8083 | Spring Boot 4.0.6 |
-| **Auth Service** | Autenticación y autorización con JWT | 8084 | Spring Boot 4.0.6 |
-| **Prescription Service** | Gestión de prescripciones | 8085 | Spring Boot 3.3.0 |
-| **Inventory Service** | Gestión de inventario/recursos | 8086 | Spring Boot 4.1.0 |
+| Servicio | Descripción | Puerto | Base de Datos | Spring Boot |
+|----------|-------------|--------|---------------|------------|
+| **Patient Service** | Administración de datos de pacientes | 8081 | patient_db | 4.0.6 |
+| **Appointment Service** | Reserva y gestión de citas médicas | 8082 | appointment_db | 4.0.6 |
+| **Doctor Service** | Base de datos de médicos y especialidades | 8083 | doctor_db | 4.0.6 |
+| **Auth Service** | Autenticación JWT y autorización | 8084 | auth_db | 4.0.6 |
+| **Prescription Service** | Gestión de prescripciones médicas | 8085 | db_prescriptions | 3.3.0 |
+| **Inventory Service** | Control de inventario hospitalario | 8086 | db_inventario | 4.1.0 |
 
-### Características por Servicio
+### 📌 Características Destacadas por Servicio
 
-- **Patient Service**: Administración de datos de pacientes
-- **Appointment Service**: Reserva y gestión de citas con integración de OpenFeign
-- **Doctor Service**: Base de datos de médicos y especialidades
-- **Auth Service**: Control de acceso con autenticación JWT
-  - Secret: `ClaveHospital123`
-  - Expiración: 1 hora
-- **Prescription Service**: Gestión de prescripciones médicas
-- **Inventory Service**: Control de inventario hospitalario
+#### Patient Service
+- CRUD completo de pacientes
+- Registro de historial médico
+- Gestión de contactos de emergencia
+
+#### Appointment Service
+- Reserva de citas médicas
+- Integración con **OpenFeign** para comunicación inter-servicios
+- Validación automática de disponibilidad de médicos
+
+#### Doctor Service
+- Registro de médicos y especialidades
+- Asignación de horarios
+- Gestión de disponibilidad
+
+#### Auth Service (Kotlin)
+- Autenticación basada en JWT
+- **Secret**: `ClaveHospital123`
+- **Expiración de token**: 1 hora
+- Control de acceso por roles
+
+#### Prescription Service
+- Generación de prescripciones
+- Validación de medicamentos
+- Historial de prescripciones
+
+#### Inventory Service
+- Control de medicamentos y recursos
+- Alertas de stock bajo
+- Registro de salidas/entradas
+
+---
 
 ## 🔌 Puertos y Configuración
 
-```
-Patient Service       → http://localhost:8081
-Appointment Service   → http://localhost:8082
-Doctor Service        → http://localhost:8083
-Auth Service          → http://localhost:8084
-Prescription Service  → http://localhost:8085
-Inventory Service     → http://localhost:8086
-```
-
-### Base de Datos
-
-Cada servicio tiene su propia base de datos MySQL:
+### Acceso Local a Servicios
 
 ```
-patient-service    → patient_db
-appointment-service → appointment_db
-doctor-service     → doctor_db
-auth-service       → auth_db
-prescription-service → db_prescriptions
-inventory-service  → db_inventario
+🔗 Patient Service       → http://localhost:8081
+🔗 Appointment Service   → http://localhost:8082
+🔗 Doctor Service        → http://localhost:8083
+🔗 Auth Service          → http://localhost:8084
+🔗 Prescription Service  → http://localhost:8085
+🔗 Inventory Service     → http://localhost:8086
 ```
 
-**Configuración por defecto:**
-- Usuario: `root`
-- Contraseña: (vacía)
-- Host: `localhost:3306`
+### ⚙️ Bases de Datos MySQL
 
-## 🚀 Rutas Principales del Gateway
+Cada servicio utiliza su propia base de datos:
 
-*En desarrollo. Las rutas específicas de cada servicio estarán disponibles cuando se implemente el API Gateway.*
+| Servicio | BD | Puerto |
+|----------|--------|--------|
+| patient-service | patient_db | 3306 |
+| appointment-service | appointment_db | 3306 |
+| doctor-service | doctor_db | 3306 |
+| auth-service | auth_db | 3306 |
+| prescription-service | db_prescriptions | 3306 |
+| inventory-service | db_inventario | 3306 |
 
-Próximamente se añadirá un API Gateway centralizado con rutas consolidadas para todos los microservicios.
+**Credenciales por defecto:**
+```
+Usuario: root
+Contraseña: (vacía)
+Host: localhost:3306
+```
 
-## 📚 Documentación Swagger
+---
 
-*Las documentaciones de Swagger estarán disponibles localmente una vez se añadan las dependencias de SpringDoc OpenAPI a cada servicio.*
+## 📚 Documentación API
 
-Rutas esperadas (cuando se implemente):
-- Patient Service: `http://localhost:8081/swagger-ui.html`
-- Appointment Service: `http://localhost:8082/swagger-ui.html`
-- Doctor Service: `http://localhost:8083/swagger-ui.html`
-- Auth Service: `http://localhost:8084/swagger-ui.html`
-- Prescription Service: `http://localhost:8085/swagger-ui.html`
-- Inventory Service: `http://localhost:8086/swagger-ui.html`
+### Swagger UI (Una vez implementado)
+
+Una vez configurado SpringDoc OpenAPI en cada servicio:
+
+```
+Patient Service:       http://localhost:8081/swagger-ui.html
+Appointment Service:   http://localhost:8082/swagger-ui.html
+Doctor Service:        http://localhost:8083/swagger-ui.html
+Auth Service:          http://localhost:8084/swagger-ui.html
+Prescription Service:  http://localhost:8085/swagger-ui.html
+Inventory Service:     http://localhost:8086/swagger-ui.html
+```
+
+### Health Check
+
+Verificar salud de servicios:
+
+```bash
+curl http://localhost:8081/actuator/health  # Patient Service
+curl http://localhost:8082/actuator/health  # Appointment Service
+curl http://localhost:8083/actuator/health  # Doctor Service
+curl http://localhost:8084/actuator/health  # Auth Service
+curl http://localhost:8085/actuator/health  # Prescription Service
+curl http://localhost:8086/actuator/health  # Inventory Service
+```
+
+---
 
 ## 🛠️ Instrucciones de Ejecución
 
-### Requisitos Previos
+### ✅ Requisitos Previos
 
-- **Java JDK 21** o superior
-- **Maven 3.6+**
-- **MySQL 8.0+**
-- **Git**
+```
+✓ Java JDK 21 o superior
+✓ Maven 3.6+
+✓ MySQL 8.0+
+✓ Git
+✓ Postman o cURL (opcional, para testing)
+```
 
-### Ejecución Local
-
-#### 1. Clonar el Repositorio
+### 📥 Paso 1: Clonar el Repositorio
 
 ```bash
 git clone https://github.com/eldaridin/hospital.git
 cd hospital
 ```
 
-#### 2. Crear Bases de Datos
+### 🗄️ Paso 2: Crear Bases de Datos
+
+Conectarse a MySQL y ejecutar:
 
 ```sql
--- Conectarse a MySQL y ejecutar:
 CREATE DATABASE IF NOT EXISTS patient_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 CREATE DATABASE IF NOT EXISTS appointment_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 CREATE DATABASE IF NOT EXISTS doctor_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -110,10 +195,10 @@ CREATE DATABASE IF NOT EXISTS db_prescriptions CHARACTER SET utf8mb4 COLLATE utf
 CREATE DATABASE IF NOT EXISTS db_inventario CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-#### 3. Compilar Microservicios
+### 🔨 Paso 3: Compilar Proyecto
 
 ```bash
-# Compilar todos los servicios
+# Compilar todos los servicios desde la raíz
 mvn clean install
 
 # O compilar individualmente
@@ -125,9 +210,9 @@ cd prescription-service && mvn clean install && cd ..
 cd inventory-service && mvn clean install && cd ..
 ```
 
-#### 4. Ejecutar Microservicios
+### ▶️ Paso 4: Ejecutar Microservicios
 
-**Opción A: Con Maven**
+**Opción A: Usar Maven (6 terminales)**
 
 ```bash
 # Terminal 1 - Patient Service
@@ -149,7 +234,7 @@ cd prescription-service && mvn spring-boot:run
 cd inventory-service && mvn spring-boot:run
 ```
 
-**Opción B: Con JAR compilados**
+**Opción B: Ejecutar JAR compilados**
 
 ```bash
 java -jar patient-service/target/patient-service-0.0.1-SNAPSHOT.jar
@@ -160,58 +245,127 @@ java -jar prescription-service/target/presciption-service-0.0.1-SNAPSHOT.jar
 java -jar inventory-service/target/inventory-service-0.0.1-SNAPSHOT.jar
 ```
 
-### Validar Ejecución
-
-Verificar que todos los servicios están activos:
+### ✔️ Paso 5: Validar Ejecución
 
 ```bash
-curl http://localhost:8081/health  # Patient Service
-curl http://localhost:8082/health  # Appointment Service
-curl http://localhost:8083/health  # Doctor Service
-curl http://localhost:8084/health  # Auth Service
-curl http://localhost:8085/health  # Prescription Service
-curl http://localhost:8086/health  # Inventory Service
+# Verificar que todos los servicios responden
+curl http://localhost:8081/actuator/health
+curl http://localhost:8082/actuator/health
+curl http://localhost:8083/actuator/health
+curl http://localhost:8084/actuator/health
+curl http://localhost:8085/actuator/health
+curl http://localhost:8086/actuator/health
+
+# Resultado esperado: {"status":"UP"}
 ```
 
-### Ejecución Remota (Producción)
+---
 
-*Las instrucciones de despliegue remoto (Docker, Kubernetes, Cloud providers) serán añadidas en futuras versiones.*
+## 🐳 Despliegue con Docker
 
-Próximamente se proporcionará:
-- Dockerfiles para cada servicio
-- Docker Compose para orquestación local
-- Configuración de Kubernetes
-- Despliegue en servicios cloud (AWS, Azure, GCP)
+### Construir Imágenes Docker
+
+```bash
+# Desde la raíz del proyecto
+docker-compose build
+```
+
+### Ejecutar con Docker Compose
+
+```bash
+docker-compose up -d
+
+# Ver logs
+docker-compose logs -f
+
+# Detener servicios
+docker-compose down
+```
+
+### Verificar Contenedores
+
+```bash
+docker ps
+# Deberías ver 6 contenedores en ejecución
+```
+
+---
 
 ## 💻 Tecnologías Utilizadas
 
 ### Backend
-- **Java 21/26**
-- **Spring Boot 4.0.6 / 4.1.0 / 3.3.0**
-- **Spring Data JPA**
-- **Spring Web MVC**
-- **Flyway** - Migraciones de base de datos
-- **Kotlin** (en Auth Service)
-- **OpenFeign** (en Appointment Service)
+- **Java 21/26** - Lenguaje principal
+- **Spring Boot 4.0.6 / 4.1.0 / 3.3.0** - Framework principal
+- **Spring Data JPA** - ORM y persistencia
+- **Spring Web MVC** - REST APIs
+- **Spring Security** - Autenticación
+- **Kotlin** - Auth Service
+- **OpenFeign** - Comunicación inter-servicios
+- **Flyway** - Migraciones de BD
 
-### Base de Datos
-- **MySQL 8.0+**
-- **MySQL Connector/J**
-- **Hibernate**
+### Bases de Datos
+- **MySQL 8.0+** - RDBMS principal
+- **MySQL Connector/J** - Driver JDBC
+- **Hibernate** - ORM
 
 ### Testing
-- **Spring Boot Test**
-- **JUnit**
+- **JUnit 5** - Framework de testing
+- **Spring Boot Test** - Testing de Spring
+- **Mockito** (Próximamente)
 
-### Build
-- **Maven**
+### DevOps
+- **Maven** - Gestión de dependencias y build
+- **Docker** - Containerización
+- **Docker Compose** - Orquestación local
 
-## 📝 Notas
+### Patrones de Diseño
+- **Microservicios**
+- **REST API**
+- **JWT (JSON Web Tokens)**
+- **Circuit Breaker** (A implementar)
+- **API Gateway** (En desarrollo)
 
-- Este proyecto está en **fase preliminar** y será expandido continuamente.
-- Se añadirán más microservicios según sea necesario.
-- La documentación será actualizada con nuevas funcionalidades.
-- Se implementará un API Gateway centralizado en futuras versiones.
+---
+
+## 🗺️ Roadmap Futuro
+
+### Fase 2
+- [ ] Implementar API Gateway centralizado
+- [ ] Agregar documentación Swagger/OpenAPI
+- [ ] Implementar Circuit Breaker (Resilience4j)
+- [ ] Agregar tests unitarios y de integración
+
+### Fase 3
+- [ ] Implementar Message Queue (RabbitMQ/Kafka)
+- [ ] Agregar logging centralizado (ELK Stack)
+- [ ] Implementar monitoreo con Prometheus
+- [ ] Configurar Kubernetes
+
+### Fase 4
+- [ ] Despliegue en AWS/Azure/GCP
+- [ ] Implementar CQRS pattern
+- [ ] Agregar Event Sourcing
+- [ ] Frontend web/móvil
+
+---
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Para contribuir:
+
+1. **Fork** el repositorio
+2. Crear una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit tus cambios (`git commit -am 'Agregado: nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Abrir un **Pull Request**
+
+---
+
+## 📝 Licencia
+
+Este proyecto está en desarrollo y actualmente sin licencia específica.
+
+---
 
 ## 👤 Autor
 
@@ -219,4 +373,11 @@ Próximamente se proporcionará:
 
 ---
 
-**Última actualización:** Junio 2026
+## 📞 Soporte
+
+Para reportar bugs o solicitar features, abre un **Issue** en el repositorio.
+
+---
+
+**Última actualización:** Junio 2026  
+**Estado del Proyecto:** En desarrollo activo 🚀
