@@ -1,6 +1,20 @@
+version: '3.8'
+
+networks:
+  hospital_net:
+    driver: bridge
+
+volumes:
+  mysql_data:
+  redis_data:
+
 services:
+  # ==========================================
+  # INFRAESTRUCTURA BASE
+  # ==========================================
   mysql:
     image: mysql:8.0
+    container_name: hospital_mysql
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
       MYSQL_DATABASE: hospital_db
@@ -9,6 +23,8 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - hospital_net
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
@@ -17,52 +33,82 @@ services:
 
   rabbitmq:
     image: rabbitmq:3-management
+    container_name: hospital_rabbitmq
     ports:
       - "5672:5672"
       - "15672:15672"
+    networks:
+      - hospital_net
 
   redis:
     image: redis:alpine
+    container_name: hospital_redis
     ports:
       - "6379:6379"
     volumes:
-      - mysql_data;
+      - redis_data:/data
+    networks:
+      - hospital_net
 
   eureka-server:
     build: ./eureka-server
+    container_name: eureka_server
     ports:
       - "8761:8761"
+    networks:
+      - hospital_net
 
+  # ==========================================
+  # MICROSERVICIOS
+  # ==========================================
   api-gateway:
     build: ./api-gateway
+    container_name: api_gateway
     ports:
       - "8080:8080"
     depends_on:
       - eureka-server
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
+    networks:
+      - hospital_net
 
   patient-service:
     build: ./patient-service
+    container_name: patient_service
     ports:
       - "8081:8081"
     depends_on:
-      - eureka-server
+      eureka-server:
+        condition: service_started
+      mysql:
+        condition: service_healthy
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/hospital_db
+    networks:
+      - hospital_net
 
   appointment-service:
     build: ./appointment-service
+    container_name: appointment_service
     ports:
       - "8082:8082"
     depends_on:
-      - eureka-server
-      - patient-service
+      eureka-server:
+        condition: service_started
+      mysql:
+        condition: service_healthy
+      patient-service:
+        condition: service_started
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
+    networks:
+      - hospital_net
 
   doctor-service:
     build: ./doctor-service
+    container_name: doctor_service
     ports:
       - "8083:8083"
     depends_on:
@@ -71,18 +117,27 @@ services:
       - appointment-service
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
+    networks:
+      - hospital_net
 
   auth-service:
     build: ./auth-service
+    container_name: auth_service
     ports:
       - "8084:8084"
     depends_on:
-      - eureka-server
+      eureka-server:
+        condition: service_started
+      mysql:
+        condition: service_healthy
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
+    networks:
+      - hospital_net
 
   prescription-service:
     build: ./prescription-service
+    container_name: prescription_service
     ports:
       - "8085:8085"
     depends_on:
@@ -90,36 +145,49 @@ services:
       - appointment-service
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
+    networks:
+      - hospital_net
 
   inventory-service:
     build: ./inventory-service
+    container_name: inventory_service
     ports:
       - "8086:8086"
     depends_on:
       - eureka-server
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
+    networks:
+      - hospital_net
 
   pharmacy-service:
     build: ./pharmacy-service
+    container_name: pharmacy_service
     ports:
       - "8087:8087"
     depends_on:
       - eureka-server
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
+    networks:
+      - hospital_net
 
   notification-service:
     build: ./notification-service
+    container_name: notification_service
     ports:
       - "8088:8088"
     depends_on:
       - eureka-server
+      - rabbitmq
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
+    networks:
+      - hospital_net
 
   billing-service:
     build: ./billing-service
+    container_name: billing_service
     ports:
       - "8089:8089"
     depends_on:
@@ -127,13 +195,18 @@ services:
       - pharmacy-service
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
+    networks:
+      - hospital_net
 
   hospitalization-service:
     build: ./hospitalization-service
+    container_name: hospitalization_service
     ports:
-      - "8010:8010"
+      - "8090:8090"
     depends_on:
       - eureka-server
       - prescription-service
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka/
+    networks:
+      - hospital_net

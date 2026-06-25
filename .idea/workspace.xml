@@ -8,16 +8,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="341d8247-392d-4017-9a6c-1c4023dc07f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/hospital/api_gateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/hospital/api_gateway/ApiGatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/hospital/api_gateway/filter/LoggingGlobalFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/hospital/api_gateway/filter/LoggingGlobalFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server-1.0.0.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prescription-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/prescription-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/doctor-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalization-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalization-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescription-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/prescription-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/render.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/docker/api-gateway.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/render/docker/api-gateway.Dockerfile" afterDir="false" />
+    </list>
+    <list id="4a3c9a26-b586-4a29-90af-5acd0153fefa" name="Changes by user" comment="">
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/docker/appointment-service.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/render/docker/appointment-service.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/docker/auth-service.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/render/docker/auth-service.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/docker/billing-service.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/render/docker/billing-service.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/docker/doctor-service.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/render/docker/doctor-service.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/docker/hospitalization-service.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/render/docker/hospitalization-service.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/docker/inventory-service.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/render/docker/inventory-service.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/docker/notification-service.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/render/docker/notification-service.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/docker/patient-service.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/render/docker/patient-service.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/docker/pharmacy-service.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/render/docker/pharmacy-service.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/docker/prescription-service.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/render/docker/prescription-service.Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +46,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="184" />
+    <option name="cachedIndexableFilesCount" value="196" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -85,59 +100,59 @@
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000000000000002" />
-      <entry key="S5" value="1.0000008118520824" />
-      <entry key="S10" value="1.0017215971525697" />
-      <entry key="S30" value="1.3003876740322993" />
-      <entry key="S60" value="2.2250512632546964" />
-      <entry key="M2" value="4.341799648707218" />
-      <entry key="M5" value="10.708546631447735" />
-      <entry key="M10" value="20.31255029768669" />
-      <entry key="M15" value="28.298321671007933" />
-      <entry key="M30" value="58.021960205056416" />
-      <entry key="H1" value="134.42166838362837" />
-      <entry key="H2" value="245.3730954217471" />
-      <entry key="H4" value="346.30276023283415" />
-      <entry key="D1" value="471.03856310160796" />
-      <entry key="W1" value="497.43417510535534" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0000000000000002" />
+      <entry key="S30" value="1.0000141237135982" />
+      <entry key="S60" value="1.0087772386761165" />
+      <entry key="M2" value="1.2270598693909514" />
+      <entry key="M5" value="2.8401367750397375" />
+      <entry key="M10" value="7.488493067639596" />
+      <entry key="M15" value="14.736246565399195" />
+      <entry key="M30" value="43.43204910458299" />
+      <entry key="H1" value="112.23036471151777" />
+      <entry key="H2" value="234.7562835411785" />
+      <entry key="H4" value="371.39988616076954" />
+      <entry key="D1" value="570.0186336888926" />
+      <entry key="W1" value="615.9277605114984" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="2.4519643159920624E-166" />
-      <entry key="S30" value="1.1856236715862267E-55" />
-      <entry key="S60" value="5.892830462382047E-28" />
-      <entry key="M2" value="4.192269650153872E-14" />
-      <entry key="M5" value="8.610155970831959E-6" />
-      <entry key="M10" value="0.00518292662995194" />
-      <entry key="M15" value="0.048038672789825536" />
-      <entry key="M30" value="0.6866596464890903" />
-      <entry key="H1" value="3.739482044424522" />
-      <entry key="H2" value="9.614726746043285" />
-      <entry key="H4" value="15.723867079367714" />
-      <entry key="D1" value="23.892777373827442" />
-      <entry key="W1" value="25.687535219618677" />
+      <entry key="S5" value="2.3114846971782943E-185" />
+      <entry key="S10" value="5.490488724682375E-93" />
+      <entry key="S30" value="3.732052289369168E-31" />
+      <entry key="S60" value="1.3674685565551574E-15" />
+      <entry key="M2" value="8.832289243348223E-8" />
+      <entry key="M5" value="0.004391172461756146" />
+      <entry key="M10" value="0.16215620871569628" />
+      <entry key="M15" value="0.5410064174460243" />
+      <entry key="M30" value="1.8894411373459437" />
+      <entry key="H1" value="4.635134320035228" />
+      <entry key="H2" value="10.214835683030302" />
+      <entry key="H4" value="17.347152435067706" />
+      <entry key="D1" value="28.750232926543656" />
+      <entry key="W1" value="31.510626152684402" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.12327908806166991" />
-      <entry key="MS500" value="0.6579272625145041" />
-      <entry key="S2" value="0.9006259798479295" />
-      <entry key="S5" value="0.9589990023307702" />
-      <entry key="S10" value="0.9810048046762171" />
-      <entry key="S30" value="1.293356448557562" />
-      <entry key="S60" value="2.221405690108202" />
-      <entry key="M2" value="4.339820597626005" />
-      <entry key="M5" value="10.707595164830364" />
-      <entry key="M10" value="20.317147274008185" />
-      <entry key="M15" value="28.34584649042856" />
-      <entry key="M30" value="58.707325347265545" />
-      <entry key="H1" value="138.15780297367365" />
-      <entry key="H2" value="254.9835839853227" />
-      <entry key="H4" value="362.02320056594795" />
-      <entry key="D1" value="494.93048244361694" />
-      <entry key="W1" value="523.1215788198888" />
+      <entry key="MS100" value="0.8766057213160351" />
+      <entry key="MS500" value="0.974004268543241" />
+      <entry key="S2" value="0.9934367347173356" />
+      <entry key="S5" value="0.9973695065410157" />
+      <entry key="S10" value="0.9986838871940491" />
+      <entry key="S30" value="0.9995751665355842" />
+      <entry key="S60" value="1.0085437750985289" />
+      <entry key="M2" value="1.2267979814424905" />
+      <entry key="M5" value="2.8440485087024756" />
+      <entry key="M10" value="7.649495663841746" />
+      <entry key="M15" value="15.275230838876855" />
+      <entry key="M30" value="45.31823717362464" />
+      <entry key="H1" value="116.86148497701731" />
+      <entry key="H2" value="244.9666660667452" />
+      <entry key="H4" value="388.7432687214828" />
+      <entry key="D1" value="598.7678327023989" />
+      <entry key="W1" value="647.4382250441839" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -194,7 +209,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.DoctorServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.DoctorServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Debug&quot;,
     &quot;Spring Boot.PresciptionServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
@@ -213,6 +228,7 @@
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2850575&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
@@ -388,7 +404,9 @@
       <workItem from="1782355490082" duration="1627000" />
       <workItem from="1782357389156" duration="760000" />
       <workItem from="1782404555608" duration="6945000" />
-      <workItem from="1782419985288" duration="1460000" />
+      <workItem from="1782419985288" duration="3204000" />
+      <workItem from="1782424108561" duration="6588000" />
+      <workItem from="1782430826156" duration="216000" />
     </task>
     <servers />
   </component>

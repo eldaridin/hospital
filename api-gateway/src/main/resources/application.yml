@@ -7,31 +7,67 @@ spring:
   cloud:
     gateway:
       routes:
+        # 1. Pacientes
         - id: patient-service
           uri: ${PATIENT_SERVICE_URL:lb://PATIENT-SERVICE}
           predicates:
             - Path=/api/pacientes/**
+
+        # 2. Citas Médicas
         - id: appointment-service
           uri: ${APPOINTMENT_SERVICE_URL:lb://APPOINTMENT-SERVICE}
           predicates:
-            - Path=/api/appointments/**
+            - Path=/api/citas/**
+
+        # 3. Doctores (Corregido: antes decía /pedidos)
         - id: doctor-service
           uri: ${DOCTOR_SERVICE_URL:lb://DOCTOR-SERVICE}
           predicates:
-            - Path=/api/pedidos/**
-        - id: pago-service
-          uri: ${PAGO_SERVICE_URL:lb://PAGO-SERVICE}
+            - Path=/api/doctores/**
+
+        # 4. Autenticación / Seguridad
+        - id: auth-service
+          uri: ${AUTH_SERVICE_URL:lb://AUTH-SERVICE}
           predicates:
-            - Path=/api/pagos/**
-        - id: despacho-service
-          uri: ${DESPACHO_SERVICE_URL:lb://DESPACHO-SERVICE}
+            - Path=/auth/**
+
+        # 5. Recetas Médicas
+        - id: prescription-service
+          uri: ${PRESCRIPTION_SERVICE_URL:lb://PRESCRIPTION-SERVICE}
           predicates:
-            - Path=/api/despachos/**
+            - Path=/api/prescriptions/**
+
+        # 6. Inventario
+        - id: inventory-service
+          uri: ${INVENTORY_SERVICE_URL:lb://INVENTORY-SERVICE}
+          predicates:
+            - Path=/api/inventario/**
+
+        # 7. Farmacia
+        - id: pharmacy-service
+          uri: ${PHARMACY_SERVICE_URL:lb://PHARMACY-SERVICE}
+          predicates:
+            - Path=/api/pharmacy/**
+
+        # 8. Notificaciones
+        - id: notification-service
+          uri: ${NOTIFICATION_SERVICE_URL:lb://NOTIFICATION-SERVICE}
+          predicates:
+            - Path=/api/v1/notifications**
+
+        # 9. Facturación (Reemplaza al antiguo pago-service)
+        - id: billing-service
+          uri: ${BILLING_SERVICE_URL:lb://BILLING-SERVICE}
+          predicates:
+            - Path=/api/v1/billing**
+
+        # 10. Hospitalización (Reemplaza al antiguo despacho-service)
+        - id: hospitalization-service
+          uri: ${HOSPITALIZATION_SERVICE_URL:lb://HOSPITALIZATION-SERVICE}
+          predicates:
+            - /api/v1/hospitalizations**
 
 management:
-  endpoint:
-    gateway:
-      access: read-only
   endpoints:
     web:
       exposure:
