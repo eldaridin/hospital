@@ -53,19 +53,19 @@ spring:
         - id: notification-service
           uri: ${NOTIFICATION_SERVICE_URL:lb://NOTIFICATION-SERVICE}
           predicates:
-            - Path=/api/v1/notifications**
+            - Path=/api/v1/notifications/**
 
         # 9. Facturación (Reemplaza al antiguo pago-service)
         - id: billing-service
           uri: ${BILLING_SERVICE_URL:lb://BILLING-SERVICE}
           predicates:
-            - Path=/api/v1/billing**
+            - Path=/api/v1/billing/**
 
         # 10. Hospitalización (Reemplaza al antiguo despacho-service)
         - id: hospitalization-service
           uri: ${HOSPITALIZATION_SERVICE_URL:lb://HOSPITALIZATION-SERVICE}
           predicates:
-            - /api/v1/hospitalizations**
+            - Path=/api/v1/hospitalizations/**
 
 management:
   endpoints:
