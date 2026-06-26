@@ -357,7 +357,7 @@ http://localhost:8761/eureka/apps                    # REST API
 ✓ Maven 3.6+
 ✓ MySQL 8.0+
 ✓ Git
-✓ Docker & Docker Compose (Opcional, pero recomendado)
+✓ Docker
 ```
 
 ### 📥 Paso 1: Clonar el Repositorio
@@ -850,8 +850,7 @@ spring.datasource.hikari.minimum-idle=2
 - **Spring Data JPA** - ORM y persistencia
 - **Spring Web MVC** - REST APIs
 - **Spring Security** - Autenticación y autorización
-- **Kotlin 2.2.20** - Auth Service
-- **JJWT 0.12.5** - JWT tokens
+- **JWT 0.12.5** - JWT tokens
 
 ### Bases de Datos
 - **MySQL 8.0+** - RDBMS principal
@@ -983,47 +982,6 @@ public RestTemplate restTemplate() {
 restTemplate.getForObject("http://patient-service/patients", Patient[].class);
 ```
 
----
-
-## 🗺️ Roadmap Futuro
-
-### Fase 2 (Q3 2026)
-- [ ] Implementar API Documentation con SpringDoc OpenAPI
-- [ ] Agregar Circuit Breaker con Resilience4j
-- [ ] Tests unitarios y de integración completos
-- [ ] Logging centralizado con ELK Stack
-- [ ] Monitoreo con Prometheus + Grafana
-
-### Fase 3 (Q4 2026)
-- [ ] Event Sourcing y CQRS
-- [ ] Implementar Kubernetes orchestration
-- [ ] Rate limiting y throttling
-- [ ] Distributed tracing con Jaeger
-- [ ] Backup automático de bases de datos
-
-### Fase 4 (2027)
-- [ ] Despliegue multi-región
-- [ ] Mobile app (React Native)
-- [ ] AI/ML para predicción de citas
-- [ ] Video consultas
-- [ ] Integración con sistemas externos (Hospitales)
-
----
-
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Para contribuir:
-
-1. **Fork** el repositorio
-2. Crear una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit tus cambios (`git commit -am 'feat: agregar nueva funcionalidad'`)
-4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Abrir un **Pull Request**
-
-### Estándares de Código
-- Java Code Style: Google Java Style Guide
-- Commits: Conventional Commits
-- Testing: Mínimo 80% de coverage
 
 ---
 
@@ -1042,20 +1000,6 @@ Desarrollado como sistema hospitalario moderno basado en microservicios.
 ---
 
 ## 📞 Soporte
-
-### Reportar Bugs
-- Abre un **Issue** en el repositorio
-- Incluye: Pasos para reproducir, error logs, versión de software
-
-### Solicitar Features
-- Etiqueta: `enhancement`
-- Describe el caso de uso
-
-### Documentación
-- Wiki: [Documentación detallada](https://github.com/eldaridin/hospital/wiki)
-- Issues: Solución a problemas comunes
-
----
 
 ## 🔗 Enlaces Útiles
 
