@@ -1,4 +1,5 @@
-
+# render.yaml
+# Despliegue completo de Arquitectura de Microservicios Hospitalarios
 
 services:
   # ==========================================
@@ -15,7 +16,7 @@ services:
     name: eureka-server
     env: java
     plan: free
-    rootDirectory: ./render/docker/eureka-server.Dockerfile
+    rootDir: eureka-server
     buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
     startCommand: java -jar target/*.jar
     envVars:
@@ -26,7 +27,7 @@ services:
     name: api-gateway
     env: java
     plan: free
-    rootDirectory: ./render/docker/api-gateway.Dockerfile
+    rootDir: api-gateway
     buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
     startCommand: java -jar target/*.jar
     envVars:
@@ -39,7 +40,7 @@ services:
     name: patient-service
     env: java
     plan: free
-    rootDirectory: ./render/docker/patient-service.Dockerfile
+    rootDir: patient-service
     buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
     startCommand: java -jar target/*.jar
     envVars:
@@ -52,7 +53,7 @@ services:
     name: appointment-service
     env: java
     plan: free
-    rootDirectory: ./render/docker/appointment-service.Dockerfile
+    rootDir: appointment-service
     buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
     startCommand: java -jar target/*.jar
     envVars:
@@ -65,7 +66,7 @@ services:
     name: doctor-service
     env: java
     plan: free
-    rootDirectory: ./render/docker/doctor-service.Dockerfile
+    rootDir: doctor-service
     buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
     startCommand: java -jar target/*.jar
     envVars:
@@ -78,7 +79,7 @@ services:
     name: auth-service
     env: java
     plan: free
-    rootDirectory: ./render/docker/auth-service.Dockerfile
+    rootDir: auth-service
     buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
     startCommand: java -jar target/*.jar
     envVars:
@@ -88,10 +89,10 @@ services:
         value: http://eureka-server:8761/eureka/
 
   - type: web
-    name: ./render/docker/prescription-service.Dockerfile
+    name: prescription-service
     env: java
     plan: free
-    rootDirectory: prescription-service
+    rootDir: prescription-service
     buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
     startCommand: java -jar target/*.jar
     envVars:
@@ -104,7 +105,7 @@ services:
     name: inventory-service
     env: java
     plan: free
-    rootDirectory: ./render/docker/inventory-service.Dockerfile
+    rootDir: inventory-service
     buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
     startCommand: java -jar target/*.jar
     envVars:
@@ -117,7 +118,7 @@ services:
     name: pharmacy-service
     env: java
     plan: free
-    rootDirectory: ./render/docker/pharmacy-service.Dockerfile
+    rootDir: pharmacy-service
     buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
     startCommand: java -jar target/*.jar
     envVars:
@@ -130,7 +131,7 @@ services:
     name: notification-service
     env: java
     plan: free
-    rootDirectory: ./render/docker/notification-service.Dockerfile
+    rootDir: notification-service
     buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
     startCommand: java -jar target/*.jar
     envVars:
@@ -143,7 +144,7 @@ services:
     name: billing-service
     env: java
     plan: free
-    rootDirectory: ./render/docker/billing-service.Dockerfile
+    rootDir: billing-service
     buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
     startCommand: java -jar target/*.jar
     envVars:
@@ -153,10 +154,10 @@ services:
         value: http://eureka-server:8761/eureka/
 
   - type: web
-    name: ./render/docker/hospitalization-service.Dockerfile
+    name: hospitalization-service
     env: java
     plan: free
-    rootDirectory: hospitalization-service
+    rootDir: hospitalization-service
     buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
     startCommand: java -jar target/*.jar
     envVars:
