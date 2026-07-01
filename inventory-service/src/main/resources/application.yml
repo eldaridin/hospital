@@ -6,15 +6,31 @@ spring:
     name: inventory-service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/db_inventario?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-    username: root
+    # URL de H2 en memoria con modo compatibilidad MySQL
+    url: jdbc:h2:mem:db_inventario;MODE=MySQL;DB_CLOSE_DELAY=-1
+    username: sa
     password:
+    driver-class-name: org.h2.Driver
+
+  # Consola web de H2
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
 
   jpa:
     show-sql: true
     hibernate:
+      #create-drop creará las tablas al iniciar y las borrará al apagar la app
       ddl-auto: create-drop
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.MySQLDialect
+        dialect: org.hibernate.dialect.H2Dialect
+
+# Configuración de Swagger / OpenAPI
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html

@@ -27,6 +27,11 @@ spring:
         dialect: org.hibernate.dialect.H2Dialect
         format_sql: true
 
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
 # Tu configuración personalizada se mantiene igual
 jwt:
   secret: ClaveHospital123
