@@ -1,236 +1,166 @@
-# render.yaml
+
+
 services:
-  # ---------------------------------------------------------
-  # 1. INFRAESTRUCTURA Y BASES DE DATOS (Servicios Privados)
-  # ---------------------------------------------------------
-
-  - type: pserv
-    name: mysql-db
-    env: docker
-    image: mysql:8.0
-    disk:
-      name: mysql-data
-      mountPath: /var/lib/mysql
-      sizeGB: 1
-    envVars:
-      - key: MYSQL_ROOT_PASSWORD
-        value: rootpass # En producción, usa el gestor de secretos de Render
-      - key: MYSQL_DATABASE
-        value: hospital_db
-
-  - type: pserv
-    name: rabbitmq
-    env: docker
-    image: rabbitmq:3-management
-    disk:
-      name: rabbitmq-data
-      mountPath: /var/lib/rabbitmq
-      sizeGB: 1
-
+  # ==========================================
+  # INFRAESTRUCTURA BASE
+  # ==========================================
   - type: redis
-    name: redis-cache
-    plan: free # Render ofrece un Redis nativo gestionado
-    ipAllowList: [] # Permite conexiones internas por defecto
-
-  # ---------------------------------------------------------
-  # 2. DISCOVERY SERVER (Servicio Privado)
-  # ---------------------------------------------------------
-
-  - type: pserv
-    name: eureka-server
-    env: docker
-    dockerContext: ./eureka-server
-    dockerfilePath: ./eureka-server/Dockerfile
+    name: hospital-redis
     plan: free
 
-  # ---------------------------------------------------------
-  # 3. WEB SERVICE PRINCIPAL (Público)
-  # ---------------------------------------------------------
+  # ==========================================
+  # MICROSERVICIOS
+  # ==========================================
+  - type: web
+    name: eureka-server
+    env: java
+    plan: free
+    rootDirectory: eureka-server
+    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: PORT
+        value: 8761
 
   - type: web
     name: api-gateway
-    env: docker
-    dockerContext: ./api-gateway
-    dockerfilePath: ./api-gateway/Dockerfile
+    env: java
     plan: free
+    rootDirectory: api-gateway
+    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
     envVars:
-      # Render enruta el tráfico interno automáticamente usando el nombre del servicio
+      - key: PORT
+        value: 8080
       - key: EUREKA_URL
         value: http://eureka-server:8761/eureka/
 
-  # ---------------------------------------------------------
-  # 4. MICROSERVICIOS DE NEGOCIO (Servicios Privados)
-  # ---------------------------------------------------------
-
-  - type: pserv
+  - type: web
     name: patient-service
-    env: docker
-    dockerContext: ./patient-service
-    dockerfilePath: ./patient-service/Dockerfile
+    env: java
     plan: free
+    rootDirectory: patient-service
+    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
     envVars:
+      - key: PORT
+        value: 8081
       - key: EUREKA_URL
         value: http://eureka-server:8761/eureka/
-      - key: SPRING_DATASOURCE_URL
-        # Fíjate cómo conectamos a la BD usando el nombre del servicio "mysql-db"
-        value: jdbc:mysql://mysql-db:3306/hospital_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-      - key: SPRING_DATASOURCE_USERNAME
-        value: root
-      - key: SPRING_DATASOURCE_PASSWORD
-        value: rootpass
 
-  - type: pserv
+  - type: web
     name: appointment-service
-    env: docker
-    dockerContext: ./appointment-service
-    dockerfilePath: ./appointment-service/Dockerfile
+    env: java
     plan: free
+    rootDirectory: appointment-service
+    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
     envVars:
+      - key: PORT
+        value: 8082
       - key: EUREKA_URL
         value: http://eureka-server:8761/eureka/
-      - key: SPRING_DATASOURCE_URL
-        value: jdbc:mysql://mysql-db:3306/appointment_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-      - key: SPRING_DATASOURCE_USERNAME
-        value: root
-      - key: SPRING_DATASOURCE_PASSWORD
-        value: rootpass
 
-  - type: pserv
+  - type: web
     name: doctor-service
-    env: docker
-    dockerContext: ./doctor-service
-    dockerfilePath: ./doctor-service/Dockerfile
+    env: java
     plan: free
+    rootDirectory: doctor-service
+    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
     envVars:
+      - key: PORT
+        value: 8083
       - key: EUREKA_URL
         value: http://eureka-server:8761/eureka/
-      - key: SPRING_DATASOURCE_URL
-        value: jdbc:mysql://mysql-db:3306/doctor_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-      - key: SPRING_DATASOURCE_USERNAME
-        value: root
-      - key: SPRING_DATASOURCE_PASSWORD
-        value: rootpass
 
-  - type: pserv
+  - type: web
     name: auth-service
-    env: docker
-    dockerContext: ./auth-service
-    dockerfilePath: ./auth-service/Dockerfile
+    env: java
     plan: free
+    rootDirectory: auth-service
+    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
     envVars:
+      - key: PORT
+        value: 8084
       - key: EUREKA_URL
         value: http://eureka-server:8761/eureka/
-      - key: SPRING_DATASOURCE_URL
-        value: jdbc:mysql://mysql-db:3306/auth_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-      - key: SPRING_DATASOURCE_USERNAME
-        value: root
-      - key: SPRING_DATASOURCE_PASSWORD
-        value: rootpass
 
-  - type: pserv
+  - type: web
     name: prescription-service
-    env: docker
-    dockerContext: ./prescription-service
-    dockerfilePath: ./prescription-service/Dockerfile
+    env: java
     plan: free
+    rootDirectory: prescription-service
+    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
     envVars:
+      - key: PORT
+        value: 8085
       - key: EUREKA_URL
         value: http://eureka-server:8761/eureka/
-      - key: SPRING_DATASOURCE_URL
-        value: jdbc:mysql://mysql-db:3306/db_prescriptions?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-      - key: SPRING_DATASOURCE_USERNAME
-        value: root
-      - key: SPRING_DATASOURCE_PASSWORD
-        value: rootpass
 
-  - type: pserv
+  - type: web
     name: inventory-service
-    env: docker
-    dockerContext: ./inventory-service
-    dockerfilePath: ./inventory-service/Dockerfile
+    env: java
     plan: free
+    rootDirectory: inventory-service
+    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
     envVars:
+      - key: PORT
+        value: 8086
       - key: EUREKA_URL
         value: http://eureka-server:8761/eureka/
-      - key: SPRING_DATASOURCE_URL
-        value: jdbc:mysql://mysql-db:3306/db_inventario?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-      - key: SPRING_DATASOURCE_USERNAME
-        value: root
-      - key: SPRING_DATASOURCE_PASSWORD
-        value: rootpass
 
-  - type: pserv
-    name: notification-service
-    env: docker
-    dockerContext: ./notification-service
-    dockerfilePath: ./notification-service/Dockerfile
-    plan: free
-    envVars:
-      - key: EUREKA_URL
-        value: http://eureka-server:8761/eureka/
-      - key: SPRING_DATASOURCE_URL
-        value: jdbc:mysql://mysql-db:3306/notificationdb?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-      - key: SPRING_DATASOURCE_USERNAME
-        value: root
-      - key: SPRING_DATASOURCE_PASSWORD
-        value: rootpass
-
-  - type: pserv
+  - type: web
     name: pharmacy-service
-    env: docker
-    dockerContext: ./pharmacy-service
-    dockerfilePath: ./pharmacy-service/Dockerfile
+    env: java
     plan: free
+    rootDirectory: pharmacy-service
+    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
     envVars:
+      - key: PORT
+        value: 8087
       - key: EUREKA_URL
         value: http://eureka-server:8761/eureka/
-      - key: SPRING_DATASOURCE_URL
-        value: jdbc:mysql://mysql-db:3306/pharmacydb?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-      - key: SPRING_DATASOURCE_USERNAME
-        value: root
-      - key: SPRING_DATASOURCE_PASSWORD
-        value: rootpass
 
-  - type: pserv
-    name: hospitalization-service
-    env: docker
-    dockerContext: ./hospitalization-service
-    dockerfilePath: ./hospitalization-service/Dockerfile
+  - type: web
+    name: notification-service
+    env: java
     plan: free
+    rootDirectory: notification-service
+    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
     envVars:
+      - key: PORT
+        value: 8088
       - key: EUREKA_URL
         value: http://eureka-server:8761/eureka/
-      - key: SPRING_DATASOURCE_URL
-        value: jdbc:h2:mem:hospitalizationdb
-      - key: SPRING_DATASOURCE_DRIVER_CLASS_NAME
-        value: org.h2.Driver
-      - key: SPRING_DATASOURCE_USERNAME
-        value: sa
-      - key: SPRING_DATASOURCE_PASSWORD
-        value: password
-      - key: SPRING_JPA_DATABASE_PLATFORM
-        value: org.hibernate.dialect.H2Dialect
 
-  - type: pserv
+  - type: web
     name: billing-service
-    env: docker
-    dockerContext: ./billing-service
-    dockerfilePath: ./billing-service/Dockerfile
+    env: java
     plan: free
+    rootDirectory: billing-service
+    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
     envVars:
+      - key: PORT
+        value: 8089
       - key: EUREKA_URL
         value: http://eureka-server:8761/eureka/
-      - key: SPRING_DATASOURCE_URL
-        value: jdbc:mysql://mysql-db:3306/billingdb?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-      - key: SPRING_DATASOURCE_USERNAME
-        value: root
-      - key: SPRING_DATASOURCE_PASSWORD
-        value: rootpass
 
-
-
-
-
-
-  # Agrega los demás microservicios (doctor, auth, prescription, etc.)
-  # siguiendo exactamente esta misma estructura de "type: pserv"
+  - type: web
+    name: hospitalization-service
+    env: java
+    plan: free
+    rootDirectory: hospitalization-service
+    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: PORT
+        value: 8090
+      - key: EUREKA_URL
+        value: http://eureka-server:8761/eureka/
