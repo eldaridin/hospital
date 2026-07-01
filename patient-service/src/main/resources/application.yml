@@ -1,18 +1,18 @@
 server:
-  port: 8082
+  port: 8081
 
 spring:
   application:
-    name: appointment-service
+    name: patient-service
 
   datasource:
-    # Base de datos en memoria con modo de compatibilidad para MySQL
-    url: jdbc:h2:mem:appointment_db;MODE=MySQL;DB_CLOSE_DELAY=-1
+    # URL de H2 en memoria con compatibilidad para tus scripts de Flyway
+    url: jdbc:h2:mem:patient_db;MODE=MySQL;DB_CLOSE_DELAY=-1
     username: sa
     password:
     driver-class-name: org.h2.Driver
 
-  # Configuración útil para ver la base de datos desde el navegador
+  # Consola web de H2 para facilitar el desarrollo
   h2:
     console:
       enabled: true
@@ -26,6 +26,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
 
+  # Flyway ejecutará los scripts de db/migration al iniciar
   flyway:
     enabled: true
     locations: classpath:db/migration

@@ -7,14 +7,22 @@ spring:
 
   # Database Configuration
   datasource:
-    url: jdbc:mysql://localhost:3306/db_prescriptions?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-    username: root
+    url: jdbc:h2:mem:db_prescriptions;MODE=MySQL;DB_CLOSE_DELAY=-1
+    username: sa
     password:
+    driver-class-name: org.h2.Driver
+
+  # H2 Console Configuration
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
 
   # JPA Configuration
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
-
-
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect

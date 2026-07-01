@@ -13,7 +13,7 @@ import java.util.Date;
 public class JwtTokenProvider {
 
     // Esta clave debe ser exactamente la misma que usen tus compañeros en el auth-service
-    private final String SECRET_KEY = "ClaveSecretaSuperSeguraParaElHospitalSistemas2026";
+    private final String SECRET_KEY = "ClaveHospital123";
 
     private Key getSigningKey() {
         byte[] keyBytes = SECRET_KEY.getBytes(StandardCharsets.UTF_8);
