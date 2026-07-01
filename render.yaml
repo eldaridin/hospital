@@ -8,160 +8,161 @@ services:
   - type: redis
     name: hospital-redis
     plan: free
+    ipAllowList: []
 
   # ==========================================
   # MICROSERVICIOS
   # ==========================================
   - type: web
-    name: eureka-server
-    env: java
+    name: hospital-eureka-server
+    runtime: docker
     plan: free
-    rootDir: eureka-server
-    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/*.jar
+    dockerfilePath: ./eureka-server/Dockerfile
+    dockerContext: ./eureka-server
+    healthCheckPath: /actuator/health
     envVars:
       - key: PORT
         value: 8761
 
   - type: web
-    name: api-gateway
-    env: java
+    name: hospital-api-gateway
+    runtime: docker
     plan: free
-    rootDir: api-gateway
-    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/*.jar
+    dockerfilePath: ./api-gateway/Dockerfile
+    dockerContext: ./api-gateway
+    healthCheckPath: /actuator/health
     envVars:
       - key: PORT
         value: 8080
       - key: EUREKA_URL
-        value: http://eureka-server:8761/eureka/
+        value: https://hospital-eureka-server.onrender.com/eureka/
 
   - type: web
-    name: patient-service
-    env: java
+    name: hospital-patient-service
+    runtime: docker
     plan: free
-    rootDir: patient-service
-    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/*.jar
+    dockerfilePath: ./patient-service/Dockerfile
+    dockerContext: ./patient-service
+    healthCheckPath: /actuator/health
     envVars:
       - key: PORT
         value: 8081
       - key: EUREKA_URL
-        value: http://eureka-server:8761/eureka/
+        value: https://hospital-eureka-server.onrender.com/eureka/
 
   - type: web
-    name: appointment-service
-    env: java
+    name: hospital-appointment-service
+    runtime: docker
     plan: free
-    rootDir: appointment-service
-    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/*.jar
+    dockerfilePath: ./appointment-service/Dockerfile
+    dockerContext: ./appointment-service
+    healthCheckPath: /actuator/health
     envVars:
       - key: PORT
         value: 8082
       - key: EUREKA_URL
-        value: http://eureka-server:8761/eureka/
+        value: https://hospital-eureka-server.onrender.com/eureka/
 
   - type: web
-    name: doctor-service
-    env: java
+    name: hospital-doctor-service
+    runtime: docker
     plan: free
-    rootDir: doctor-service
-    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/*.jar
+    dockerfilePath: ./doctor-service/Dockerfile
+    dockerContext: ./doctor-service
+    healthCheckPath: /actuator/health
     envVars:
       - key: PORT
         value: 8083
       - key: EUREKA_URL
-        value: http://eureka-server:8761/eureka/
+        value: https://hospital-eureka-server.onrender.com/eureka/
 
   - type: web
-    name: auth-service
-    env: java
+    name: hospital-auth-service
+    runtime: docker
     plan: free
-    rootDir: auth-service
-    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/*.jar
+    dockerfilePath: ./auth-service/Dockerfile
+    dockerContext: ./auth-service
+    healthCheckPath: /actuator/health
     envVars:
       - key: PORT
         value: 8084
       - key: EUREKA_URL
-        value: http://eureka-server:8761/eureka/
+        value: https://hospital-eureka-server.onrender.com/eureka/
 
   - type: web
-    name: prescription-service
-    env: java
+    name: hospital-prescription-service
+    runtime: docker
     plan: free
-    rootDir: prescription-service
-    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/*.jar
+    dockerfilePath: ./prescription-service/Dockerfile
+    dockerContext: ./prescription-service
+    healthCheckPath: /actuator/health
     envVars:
       - key: PORT
         value: 8085
       - key: EUREKA_URL
-        value: http://eureka-server:8761/eureka/
+        value: https://hospital-eureka-server.onrender.com/eureka/
 
   - type: web
-    name: inventory-service
-    env: java
+    name: hospital-inventory-service
+    runtime: docker
     plan: free
-    rootDir: inventory-service
-    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/*.jar
+    dockerfilePath: ./inventory-service/Dockerfile
+    dockerContext: ./inventory-service
+    healthCheckPath: /actuator/health
     envVars:
       - key: PORT
         value: 8086
       - key: EUREKA_URL
-        value: http://eureka-server:8761/eureka/
+        value: https://hospital-eureka-server.onrender.com/eureka/
 
   - type: web
-    name: pharmacy-service
-    env: java
+    name: hospital-pharmacy-service
+    runtime: docker
     plan: free
-    rootDir: pharmacy-service
-    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/*.jar
+    dockerfilePath: ./pharmacy-service/Dockerfile
+    dockerContext: ./pharmacy-service
+    healthCheckPath: /actuator/health
     envVars:
       - key: PORT
         value: 8087
       - key: EUREKA_URL
-        value: http://eureka-server:8761/eureka/
+        value: https://hospital-eureka-server.onrender.com/eureka/
 
   - type: web
-    name: notification-service
-    env: java
+    name: hospital-notification-service
+    runtime: docker
     plan: free
-    rootDir: notification-service
-    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/*.jar
+    dockerfilePath: ./notification-service/Dockerfile
+    dockerContext: ./notification-service
+    healthCheckPath: /actuator/health
     envVars:
       - key: PORT
         value: 8088
       - key: EUREKA_URL
-        value: http://eureka-server:8761/eureka/
+        value: https://hospital-eureka-server.onrender.com/eureka/
 
   - type: web
-    name: billing-service
-    env: java
+    name: hospital-billing-service
+    runtime: docker
     plan: free
-    rootDir: billing-service
-    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/*.jar
+    dockerfilePath: ./billing-service/Dockerfile
+    dockerContext: ./billing-service
+    healthCheckPath: /actuator/health
     envVars:
       - key: PORT
         value: 8089
       - key: EUREKA_URL
-        value: http://eureka-server:8761/eureka/
+        value: https://hospital-eureka-server.onrender.com/eureka/
 
   - type: web
-    name: hospitalization-service
-    env: java
+    name: hospital-hospitalization-service
+    runtime: docker
     plan: free
-    rootDir: hospitalization-service
-    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/*.jar
+    dockerfilePath: ./hospitalization-service/Dockerfile
+    dockerContext: ./hospitalization-service
+    healthCheckPath: /actuator/health
     envVars:
       - key: PORT
         value: 8090
       - key: EUREKA_URL
-        value: http://eureka-server:8761/eureka/
+        value: https://hospital-eureka-server.onrender.com/eureka/
