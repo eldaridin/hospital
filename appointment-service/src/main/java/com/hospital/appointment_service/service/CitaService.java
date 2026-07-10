@@ -3,6 +3,8 @@ package com.hospital.appointment_service.service;
 import com.hospital.appointment_service.client.DoctorClient;
 import com.hospital.appointment_service.client.PacienteClient;
 import com.hospital.appointment_service.dto.CitaDTO;
+import com.hospital.appointment_service.dto.DoctorResponseDTO;
+import com.hospital.appointment_service.dto.PacienteResponseDTO;
 import com.hospital.appointment_service.model.Cita;
 import com.hospital.appointment_service.repository.CitaRepository;
 import org.slf4j.Logger;
@@ -54,7 +56,7 @@ public class CitaService {
 
         // Verificar que el paciente existe en patient-service
         try {
-            Object paciente = pacienteClient.obtenerPacientePorId(dto.getPacienteId());
+            PacienteResponseDTO paciente = pacienteClient.obtenerPacientePorId(dto.getPacienteId());
             if (paciente == null) {
                 throw new RuntimeException("Paciente con ID " + dto.getPacienteId() + " no encontrado");
             }
@@ -66,7 +68,7 @@ public class CitaService {
 
         // Verificar que el doctor existe en doctor-service
         try {
-            Object doctor = doctorClient.obtenerDoctorPorId(dto.getDoctorId());
+            DoctorResponseDTO doctor = doctorClient.obtenerDoctorPorId(dto.getDoctorId());
             if (doctor == null) {
                 throw new RuntimeException("Doctor con ID " + dto.getDoctorId() + " no encontrado");
             }
