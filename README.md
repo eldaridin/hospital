@@ -1,6 +1,6 @@
 # 🏥 Sistema Hospitalario con Microservicios
 
-Sistema modular y escalable de gestión hospitalaria desarrollado con **arquitectura de microservicios** en **Java Spring Boot**. Implementa patrones de comunicación inter-servicios, autenticación JWT, service discovery con Eureka, colas de mensajes con RabbitMQ y persistencia de datos distribuida con MySQL.
+Sistema modular y escalable de gestión hospitalaria desarrollado con **arquitectura de microservicios** en **Java Spring Boot**. Implementa patrones de comunicación inter-servicios, autenticación JWT y orquestación con Docker.
 
 ---
 
@@ -14,7 +14,6 @@ Sistema modular y escalable de gestión hospitalaria desarrollado con **arquitec
 - [Documentación API](#documentación-api)
 - [Instrucciones de Ejecución Local](#instrucciones-de-ejecución-local)
 - [Despliegue con Docker](#despliegue-con-docker)
-- [Despliegue en Render](#despliegue-en-render)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
 - [Estructura de Base de Datos](#estructura-de-base-de-datos)
 - [Comunicación Inter-Servicios](#comunicación-inter-servicios)
@@ -42,36 +41,36 @@ Este proyecto implementa un sistema completo de gestión hospitalaria donde cada
 ### Diagrama de Componentes
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
+┌────────────────────────────────────────────────────────────────────┐
 │                        CLIENTE (Frontend/Mobile)                     │
-└────────────────────────────┬────────────────────────────────────────┘
-                             │
-                    ┌────────▼────────┐
-                    │  API GATEWAY    │ (Puerto 8080)
-                    │  Spring Cloud   │
-                    │   Gateway       │
-                    └────────┬────────┘
-                             │
-        ┌────────────────────┼────────────────────┐
-        │                    │                    │
-        │        ┌───────────┴──────────┐         │
-        │        │   Eureka Server      │         │
-        │        │   (Service Discovery)│         │
-        │        │   (Puerto 8761)      │         │
-        │        └──────────────────────┘         │
-        │                                          │
-        ▼                                          ▼
+└────────────────────────┬───────────────────────────────────────────┘
+                         │
+                ┌────────▼────────┐
+                │  API GATEWAY    │ (Puerto 8080)
+                │  Spring Cloud   │
+                │   Gateway       │
+                └────────┬────────┘
+                         │
+        ┌────────────────┼────────────────┐
+        │                │                │
+        │        ┌───────┴──────────┐     │
+        │        │   Eureka Server  │     │
+        │        │   (Service Disc.)│     │
+        │        │   (Puerto 8761)  │     │
+        │        └──────────────────┘     │
+        │                                  │
+        ▼                                  ▼
     ┌─────────────────┐        ┌──────────────────────┐
     │ Patient Service │        │ Appointment Service  │
     │   (8081)        │        │      (8082)          │
     └─────────────────┘        └──────────────────────┘
             │                           │
             ▼                           ▼
-    ┌─────────────────┐        ┌──────────────────────┐
-    │ Doctor Service  │        │  Auth Service        │
-    │   (8083)        │        │  JWT (Kotlin)        │
-    └─────────────────┘        │  (8084)              │
-                               └──────────────────────┘
+    ┌─────────────────┐        ┌──────────────────┐
+    │ Doctor Service  │        │  Auth Service    │
+    │   (8083)        │        │  JWT (Kotlin)    │
+    └─────────────────┘        │  (8084)          │
+                               └──────────────────┘
         ┌──────────────────────────────────────┬─────────────────┐
         │                                      │                 │
         ▼                                      ▼                 ▼
@@ -85,21 +84,21 @@ Este proyecto implementa un sistema completo de gestión hospitalaria donde cada
     │ Hospitalization      │          │ Notification Service     │
     │ Service (8090)       │          │ (RabbitMQ) (8088)        │
     └──────────────────────┘          └──────────────────────────┘
-                │                              │
-                └──────────────────┬───────────┘
-                                   ▼
-                          ┌──────────────────┐
-                          │  Billing Service │
-                          │  (8089)          │
-                          └──────────────────┘
+            │                              │
+            └──────────────────┬───────────┘
+                               ▼
+                      ┌──────────────────┐
+                      │  Billing Service │
+                      │  (8089)          │
+                      └──────────────────┘
 
-┌─────────────────────────────────────────────────────────────────────┐
+┌────────────────────────────────────────────────────────────────────┐
 │                      INFRAESTRUCTURA COMPARTIDA                      │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐             │
 │  │ MySQL    │  │ RabbitMQ │  │  Redis   │  │ Eureka   │             │
 │  │  (3306)  │  │ (5672)   │  │ (6379)   │  │ (8761)   │             │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────┘             │
-└─────────────────────────────────────────────────────────────────────┘
+└────────────────────────────────────────────────────────────────────┘
 ```
 
 ### Estructura de Carpetas
@@ -125,8 +124,8 @@ hospital/
 ```
 
 **Composición del código:**
-- **Java**: 94.7%
-- **Dockerfile**: 5.3%
+- **Java**: 97.6%
+- **Dockerfile**: 2.4%
 
 ---
 
@@ -357,7 +356,7 @@ http://localhost:8761/eureka/apps                    # REST API
 ✓ Maven 3.6+
 ✓ MySQL 8.0+
 ✓ Git
-✓ Docker
+✓ Docker (opcional, para ejecución containerizada)
 ```
 
 ### 📥 Paso 1: Clonar el Repositorio
@@ -396,7 +395,7 @@ cd patient-service && mvn clean install && cd ..
 # ... resto de servicios
 ```
 
-### ▶️ Paso 4: Ejecutar Microservicios (11 terminales)
+### ▶️ Paso 4: Ejecutar Microservicios (12 terminales)
 
 **Opción A: Usar Maven**
 
@@ -517,326 +516,6 @@ docker events
 
 ---
 
-## 🚀 Despliegue en Render
-
-### 📋 Guía de Despliegue en Render
-
-Render es una plataforma PaaS moderna que facilita el despliegue de aplicaciones containerizadas. A continuación se detalla cómo desplegar este sistema:
-
-### Paso 1: Preparar Repositorio
-
-1. **Crear archivo `.dockerignore`** en la raíz del proyecto:
-
-```dockerfile
-.git
-.gitignore
-.github
-.gitlab-ci.yml
-.travis.yml
-*.md
-LICENSE
-target/
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-```
-
-2. **Crear `Dockerfile` multi-etapa** en la raíz (para servicios):
-
-```dockerfile
-# Build stage
-FROM maven:3.9-eclipse-temurin-21 AS builder
-
-WORKDIR /app
-
-COPY pom.xml .
-
-RUN mvn dependency:go-offline
-
-COPY . .
-
-ARG SERVICE_NAME=patient-service
-
-RUN mvn clean package -DskipTests -pl ${SERVICE_NAME} -am
-
-# Runtime stage
-FROM eclipse-temurin:21-jre-alpine
-
-WORKDIR /app
-
-ARG SERVICE_NAME=patient-service
-
-COPY --from=builder /app/${SERVICE_NAME}/target/*.jar app.jar
-
-EXPOSE 8081
-
-ENTRYPOINT ["java", "-jar", "app.jar"]
-```
-
-3. **Crear `render.yaml`** para multi-servicios:
-
-```yaml
-services:
-  # Eureka Server
-  - type: web
-    name: hospital-eureka-server
-    runtime: docker
-    repo: https://github.com/eldaridin/hospital
-    branch: master
-    dockerfilePath: ./eureka-server/Dockerfile
-    healthCheckPath: /
-    envVars:
-      - key: PORT
-        value: 8761
-
-  # API Gateway
-  - type: web
-    name: hospital-api-gateway
-    runtime: docker
-    repo: https://github.com/eldaridin/hospital
-    branch: master
-    dockerfilePath: ./api-gateway/Dockerfile
-    healthCheckPath: /actuator/health
-    depends_on:
-      - hospital-eureka-server
-    envVars:
-      - key: PORT
-        value: 8080
-      - key: EUREKA_URL
-        value: http://hospital-eureka-server.onrender.com:8761/eureka/
-
-  # Patient Service
-  - type: web
-    name: hospital-patient-service
-    runtime: docker
-    repo: https://github.com/eldaridin/hospital
-    branch: master
-    dockerfilePath: ./patient-service/Dockerfile
-    healthCheckPath: /actuator/health
-    depends_on:
-      - hospital-eureka-server
-      - hospital-mysql
-    envVars:
-      - key: PORT
-        value: 8081
-      - key: EUREKA_URL
-        value: http://hospital-eureka-server.onrender.com:8761/eureka/
-      - key: SPRING_DATASOURCE_URL
-        value: jdbc:mysql://hospital-mysql:3306/patient_db
-      - key: SPRING_DATASOURCE_USERNAME
-        fromDatabase: hospital_mysql
-        property: username
-      - key: SPRING_DATASOURCE_PASSWORD
-        fromDatabase: hospital_mysql
-        property: password
-
-  # [Repetir para otros servicios: appointment, doctor, auth, etc.]
-
-  # MySQL Database
-  - type: pserv
-    name: hospital-mysql
-    runtime: docker
-    repo: https://github.com/eldaridin/hospital
-    branch: master
-    dockerfilePath: ./mysql/Dockerfile
-    disk:
-      name: mysql_data
-      mountPath: /var/lib/mysql
-      sizeGB: 10
-    envVars:
-      - key: MYSQL_ROOT_PASSWORD
-        value: ${MYSQL_ROOT_PASSWORD}
-      - key: MYSQL_DATABASE
-        value: hospital_db
-
-  # RabbitMQ
-  - type: pserv
-    name: hospital-rabbitmq
-    runtime: docker
-    image: rabbitmq:3-management
-    envVars:
-      - key: RABBITMQ_DEFAULT_USER
-        value: guest
-      - key: RABBITMQ_DEFAULT_PASS
-        value: guest
-
-  # Redis
-  - type: pserv
-    name: hospital-redis
-    runtime: docker
-    image: redis:alpine
-    disk:
-      name: redis_data
-      mountPath: /data
-      sizeGB: 5
-```
-
-### Paso 2: Configurar en Render Dashboard
-
-#### 2.1 Crear Base de Datos PostgreSQL/MySQL
-
-1. En Render Dashboard → **New +** → **PostgreSQL** o **MySQL**
-2. Configurar:
-   - Name: `hospital-mysql`
-   - Database: `hospital_db`
-   - Username: `admin`
-   - Guardar credenciales
-
-#### 2.2 Desplegar Servicios
-
-**Opción A: Deploy Manual**
-
-1. **Conectar repositorio GitHub**
-   - New + → Web Service
-   - Seleccionar repositorio
-   - Branch: `master`
-
-2. **Configurar cada servicio**
-   - Build Command: `mvn clean package`
-   - Start Command: `java -jar target/service-name-1.0.0.jar`
-
-3. **Variables de entorno por servicio**
-
-```env
-# Eureka Server
-SPRING_APPLICATION_NAME=eureka-server
-SERVER_PORT=8761
-
-# API Gateway
-SPRING_APPLICATION_NAME=api-gateway
-SERVER_PORT=8080
-EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
-
-# Patient Service
-SPRING_APPLICATION_NAME=patient-service
-SERVER_PORT=8081
-EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
-SPRING_DATASOURCE_URL=jdbc:mysql://mysql-host:3306/patient_db
-SPRING_DATASOURCE_USERNAME=${DB_USERNAME}
-SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
-```
-
-**Opción B: Deploy con `render.yaml` (Recomendado)**
-
-```bash
-# Crear archivo render.yaml en raíz
-# Renderizar.com detectará automáticamente el archivo
-# En Dashboard → Settings → Deploy Hook
-# Hacer commit y push
-git add render.yaml
-git commit -m "Add Render deployment config"
-git push origin master
-```
-
-### Paso 3: Configurar Networking
-
-1. **Crear Private Service para MySQL**
-   - En Render: Web Service → Environment → Private Network
-   - Exponer solo endpoints necesarios
-
-2. **Configurar CORS en API Gateway**
-
-```yaml
-spring:
-  cloud:
-    gateway:
-      routes:
-        - id: patient-service
-          uri: http://hospital-patient-service:8081
-          predicates:
-            - Path=/patients/**
-          filters:
-            - AddResponseHeader=Access-Control-Allow-Origin, *
-```
-
-3. **Health Checks y Deploy**
-   - HTTP Path: `/actuator/health`
-   - Port: Variable de Puerto
-   - Initial Delay: 60s
-   - Timeout: 30s
-
-### Paso 4: Variables de Entorno en Render
-
-Crear en Render Dashboard → Web Service → Environment:
-
-```env
-# Database
-MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-MYSQL_USER=hospital_admin
-MYSQL_PASSWORD=${MYSQL_PASSWORD}
-
-# JWT
-JWT_SECRET=ClaveHospital123RenderProduction
-JWT_EXPIRATION=3600000
-
-# Logging
-LOGGING_LEVEL_ROOT=INFO
-LOGGING_LEVEL_COM_HOSPITAL=DEBUG
-
-# Profiles
-SPRING_PROFILES_ACTIVE=production
-```
-
-### Paso 5: Monitoreo en Render
-
-```bash
-# Ver logs en tiempo real
-# Dashboard → Web Service → Logs
-
-# Ver métricas
-# Dashboard → Metrics
-
-# Configurar alertas
-# Settings → Notifications
-```
-
-### Consideraciones para Render
-
-#### ✅ Ventajas
-- Despliegue automático con Git
-- SSL/HTTPS gratuito
-- Escalado automático
-- Base de datos managed
-- Monitoreo integrado
-
-#### ⚠️ Limitaciones
-- Plan gratuito con limitations
-- Inactividad = down time
-- Recursos limitados en plan free
-- Cold starts (20-30 segundos)
-
-#### 💡 Optimizaciones
-
-1. **Reducir tamaño de imagen**
-```dockerfile
-# Usar alpine base
-FROM eclipse-temurin:21-jre-alpine
-
-# Minimizar capas
-RUN apk add --no-cache curl
-```
-
-2. **Usar Spring Boot AOT (Ahead of Time)**
-```xml
-<plugin>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-maven-plugin</artifactId>
-  <configuration>
-    <classifier>exec</classifier>
-  </configuration>
-</plugin>
-```
-
-3. **Configurar connection pooling**
-```properties
-spring.datasource.hikari.maximum-pool-size=5
-spring.datasource.hikari.minimum-idle=2
-```
-
----
-
 ## 💻 Tecnologías Utilizadas
 
 ### Backend
@@ -875,7 +554,6 @@ spring.datasource.hikari.minimum-idle=2
 - **Maven 3.6+** - Gestión de dependencias
 - **Docker** - Containerización
 - **Docker Compose** - Orquestación local
-- **Render** - PaaS para despliegue
 
 ### Patrones de Diseño
 - **Microservicios** - Arquitectura
@@ -917,26 +595,26 @@ spring.datasource.hikari.minimum-idle=2
                       │
                       │ 1:N
                       ▼
-         ┌─────────────────────────┐
-         │   Prescriptions         │
-         ├─────────────────────────┤
-         │ id (PK)                 │
-         │ appointment_id (FK)     │
-         │ medication              │
-         │ dosage                  │
-         │ duration                │
-         └─────────────────────────┘
+           ┌─────────────────────────┐
+           │   Prescriptions         │
+           ├─────────────────────────┤
+           │ id (PK)                 │
+           │ appointment_id (FK)     │
+           │ medication              │
+           │ dosage                  │
+           │ duration                │
+           └─────────────────────────┘
                       │
                       │ 1:N
                       ▼
-         ┌─────────────────────────┐
-         │  Pharmacy Dispenses     │
-         ├─────────────────────────┤
-         │ id (PK)                 │
-         │ prescription_id (FK)    │
-         │ date_dispensed          │
-         │ quantity                │
-         └─────────────────────────┘
+           ┌─────────────────────────┐
+           │  Pharmacy Dispenses     │
+           ├─────────────────────────┤
+           │ id (PK)                 │
+           │ prescription_id (FK)    │
+           │ date_dispensed          │
+           │ quantity                │
+           └─────────────────────────┘
 ```
 
 ### Scripts de Inicialización
@@ -982,6 +660,18 @@ public RestTemplate restTemplate() {
 restTemplate.getForObject("http://patient-service/patients", Patient[].class);
 ```
 
+---
+
+## 🚀 Roadmap Futuro
+
+- [ ] Implementar Swagger/OpenAPI para documentación automática
+- [ ] Agregar Circuit Breaker (Resilience4j)
+- [ ] Implementar Distributed Tracing (Sleuth + Zipkin)
+- [ ] Agregar métricas con Micrometer + Prometheus
+- [ ] Crear dashboards de monitoreo (Grafana)
+- [ ] Implementar WebSockets para notificaciones en tiempo real
+- [ ] Agregar OAuth2/OIDC para autenticación más robusta
+- [ ] Optimizar con Spring Boot 3.x virtual threads
 
 ---
 
@@ -999,23 +689,13 @@ Desarrollado como sistema hospitalario moderno basado en microservicios.
 
 ---
 
-## 📞 Soporte
+## ✉️ Soporte
 
-## 🔗 Enlaces Útiles
+Para reportar issues o sugerencias, por favor abre un [GitHub Issue](https://github.com/eldaridin/hospital/issues).
 
-- [Spring Boot Documentation](https://spring.io/projects/spring-boot)
-- [Spring Cloud Gateway](https://cloud.spring.io/spring-cloud-gateway)
-- [Netflix Eureka](https://github.com/Netflix/eureka)
-- [RabbitMQ Documentation](https://www.rabbitmq.com/documentation.html)
-- [Docker Documentation](https://docs.docker.com/)
-- [Render Documentation](https://render.com/docs)
+Para preguntas o discusiones generales, consulta las [Discussions](https://github.com/eldaridin/hospital/discussions).
 
 ---
 
-**Última actualización:** Junio 2026  
-**Estado del Proyecto:** En desarrollo activo 🚀  
-**Versión:** 1.0.0-SNAPSHOT
-
----
-
-*Sistema Hospitalario con Microservicios - Arquitectura escalable, moderna y resiliente* ⚕️
+**Última actualización**: julio 2026  
+**Versión**: 1.0.0
