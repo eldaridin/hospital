@@ -18,9 +18,6 @@ public class PrescriptionService {
     @Autowired
     private PrescriptionRepository repository;
 
-    /**
-     * Crea una receta validando primero que la cita exista en appointment-service.
-     */
     @Transactional
     public Prescription createPrescription(@Valid PrescriptionRequest dto) {
         // 2. Mapeo de DTO a Entidad
@@ -35,26 +32,20 @@ public class PrescriptionService {
         return repository.save(prescription);
     }
 
-    /**
-     * Recupera todas las recetas registradas.
-     */
+
     @Transactional(readOnly = true)
     public List<Prescription> findAll() {
         return repository.findAll();
     }
 
-    /**
-     * Busca una receta por su ID.
-     */
+
     @Transactional(readOnly = true)
     public Prescription getById(Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Receta médica no encontrada con el ID: " + id));
     }
 
-    /**
-     * Busca todas las recetas vinculadas a una cita específica.
-     */
+
     @Transactional(readOnly = true)
     public List<Prescription> getByAppointmentId(Long appointmentId) {
         List<Prescription> prescriptions = repository.findByAppointmentId(appointmentId);
@@ -64,9 +55,7 @@ public class PrescriptionService {
         return prescriptions;
     }
 
-    /**
-     * Elimina una receta de la base de datos.
-     */
+
     @Transactional
     public void delete(Long id) {
         if (!repository.existsById(id)) {
