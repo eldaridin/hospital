@@ -615,87 +615,12 @@ docker events
            │ date_dispensed          │
            │ quantity                │
            └─────────────────────────┘
-```
 
-### Scripts de Inicialización
 
-Ver archivo `init.sql` para crear tablas y datos iniciales.
 
----
 
-## 📡 Comunicación Inter-Servicios
 
-### Sincrónica: OpenFeign
 
-```java
-@FeignClient(name = "patient-service")
-public interface PatientServiceClient {
-    @GetMapping("/patients/{id}")
-    PatientDTO getPatient(@PathVariable Long id);
-}
-```
 
-### Asincrónica: RabbitMQ
 
-```java
-@Service
-public class NotificationService {
-    @RabbitListener(queues = "appointment.created")
-    public void handleAppointmentCreated(AppointmentEvent event) {
-        // Procesar evento
-    }
-}
-```
 
-### Load Balancing: Eureka
-
-```java
-@LoadBalanced
-@Bean
-public RestTemplate restTemplate() {
-    return new RestTemplate();
-}
-
-// Uso automático con Eureka
-restTemplate.getForObject("http://patient-service/patients", Patient[].class);
-```
-
----
-
-## 🚀 Roadmap Futuro
-
-- [ ] Implementar Swagger/OpenAPI para documentación automática
-- [ ] Agregar Circuit Breaker (Resilience4j)
-- [ ] Implementar Distributed Tracing (Sleuth + Zipkin)
-- [ ] Agregar métricas con Micrometer + Prometheus
-- [ ] Crear dashboards de monitoreo (Grafana)
-- [ ] Implementar WebSockets para notificaciones en tiempo real
-- [ ] Agregar OAuth2/OIDC para autenticación más robusta
-- [ ] Optimizar con Spring Boot 3.x virtual threads
-
----
-
-## 📝 Licencia
-
-Este proyecto está en desarrollo y actualmente bajo licencia **MIT** (ver archivo LICENSE).
-
----
-
-## 👤 Autor
-
-**eldaridin** - GitHub: [@eldaridin](https://github.com/eldaridin)
-
-Desarrollado como sistema hospitalario moderno basado en microservicios.
-
----
-
-## ✉️ Soporte
-
-Para reportar issues o sugerencias, por favor abre un [GitHub Issue](https://github.com/eldaridin/hospital/issues).
-
-Para preguntas o discusiones generales, consulta las [Discussions](https://github.com/eldaridin/hospital/discussions).
-
----
-
-**Última actualización**: julio 2026  
-**Versión**: 1.0.0
