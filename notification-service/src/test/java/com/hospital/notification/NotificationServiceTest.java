@@ -1,5 +1,6 @@
 package com.hospital.notification;
 
+import com.hospital.notification.dto.NotificationDTO;
 import com.hospital.notification.model.NotificationLog;
 import com.hospital.notification.repository.NotificationRepository;
 import com.hospital.notification.service.NotificationService;
@@ -37,10 +38,16 @@ public class NotificationServiceTest {
     }
 
     @Test
-    void sendNotification_DeberiaEstablecerFechaYGuardar() {
+    void sendFromDTO_DeberiaEstablecerFechaYGuardar() {
         when(repository.save(any(NotificationLog.class))).thenAnswer(i -> i.getArguments()[0]);
 
-        NotificationLog resultado = service.sendNotification(notificationReal);
+        NotificationDTO dto = new NotificationDTO();
+        dto.setPatientId(100L);
+        dto.setRecipientEmail("paciente@test.com");
+        dto.setMessage("Alerta de medicamento");
+        dto.setNotificationType("EMAIL");
+
+        NotificationLog resultado = service.sendFromDTO(dto);
 
         assertNotNull(resultado);
         assertNotNull(resultado.getSentAt());

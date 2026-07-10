@@ -1,7 +1,7 @@
 package com.hospital.billing;
 
-
 import com.hospital.billing.controller.BillingController;
+import com.hospital.billing.dto.InvoiceDTO;
 import com.hospital.billing.model.Invoice;
 import com.hospital.billing.service.BillingService;
 import org.junit.jupiter.api.BeforeEach;
@@ -50,11 +50,11 @@ public class BillingControllerTest {
             }
         """;
     }
-    //POST Crear una factura
+
     @Test
     @WithMockUser
     void create_DeberiaRetornar201_CuandoEsExitoso() throws Exception {
-        when(billingService.createInvoice(any(Invoice.class))).thenReturn(invoiceReal);
+        when(billingService.createFromDTO(any(InvoiceDTO.class))).thenReturn(invoiceReal);
 
         mockMvc.perform(post("/api/v1/billing")
                         .with(csrf())
@@ -64,7 +64,7 @@ public class BillingControllerTest {
                 .andExpect(jsonPath("$.status").value("PENDIENTE"))
                 .andExpect(jsonPath("$.concept").value("Consulta General"));
     }
-    // GET Obtiene factura por cliente
+
     @Test
     @WithMockUser
     void getByPatient_DeberiaRetornar200YListaDeFacturas() throws Exception {
@@ -75,7 +75,7 @@ public class BillingControllerTest {
                 .andExpect(jsonPath("$[0].patientId").value(100))
                 .andExpect(jsonPath("$[0].amount").value(50.0));
     }
-    //PUT Actualiza una factura como PAGADA
+
     @Test
     @WithMockUser
     void pay_DeberiaRetornar200_CuandoEsExitoso() throws Exception {
@@ -91,7 +91,7 @@ public class BillingControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.status").value("PAGADO"));
     }
-    //PUT excepcion si la factura no existe
+
     @Test
     @WithMockUser
     void pay_DeberiaRetornar404_CuandoFacturaNoExiste() throws Exception {

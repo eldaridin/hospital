@@ -1,5 +1,6 @@
 package com.hospital.billing;
 
+import com.hospital.billing.dto.InvoiceDTO;
 import com.hospital.billing.model.Invoice;
 import com.hospital.billing.repository.InvoiceRepository;
 import com.hospital.billing.service.BillingService;
@@ -39,15 +40,15 @@ public class BillingServiceTest {
     }
 
     @Test
-    void createInvoice_DeberiaEstablecerStatusPendienteYGuardar() {
+    void createFromDTO_DeberiaEstablecerStatusPendienteYGuardar() {
         when(invoiceRepository.save(any(Invoice.class))).thenAnswer(i -> i.getArguments()[0]);
 
-        Invoice nuevaInvoice = new Invoice();
-        nuevaInvoice.setPatientId(100L);
-        nuevaInvoice.setConcept("Consulta General");
-        nuevaInvoice.setAmount(50.0);
+        InvoiceDTO dto = new InvoiceDTO();
+        dto.setPatientId(100L);
+        dto.setConcept("Consulta General");
+        dto.setAmount(50.0);
 
-        Invoice resultado = billingService.createInvoice(nuevaInvoice);
+        Invoice resultado = billingService.createFromDTO(dto);
 
         assertNotNull(resultado);
         assertEquals("PENDIENTE", resultado.getStatus());

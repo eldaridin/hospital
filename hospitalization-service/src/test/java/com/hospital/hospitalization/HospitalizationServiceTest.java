@@ -1,5 +1,6 @@
 package com.hospital.hospitalization;
 
+import com.hospital.hospitalization.dto.HospitalizationDTO;
 import com.hospital.hospitalization.model.Hospitalization;
 import com.hospital.hospitalization.repository.HospitalizationRepository;
 import com.hospital.hospitalization.service.HospitalizationService;
@@ -39,10 +40,16 @@ public class HospitalizationServiceTest {
     }
 
     @Test
-    void registerAdmission_DeberiaEstablecerFechaYEstadoAdmitted() {
+    void registerAdmissionFromDTO_DeberiaEstablecerFechaYEstadoAdmitted() {
         when(repository.save(any(Hospitalization.class))).thenAnswer(i -> i.getArguments()[0]);
 
-        Hospitalization resultado = service.registerAdmission(hospitalizationReal);
+        HospitalizationDTO dto = new HospitalizationDTO();
+        dto.setPatientId(100L);
+        dto.setDoctorId(200L);
+        dto.setRoomNumber("101A");
+        dto.setDiagnosis("Neumonía");
+
+        Hospitalization resultado = service.registerAdmissionFromDTO(dto);
 
         assertNotNull(resultado);
         assertEquals("ADMITTED", resultado.getStatus());

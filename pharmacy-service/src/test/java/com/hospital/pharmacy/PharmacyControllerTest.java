@@ -1,6 +1,7 @@
 package com.hospital.pharmacy;
 
 import com.hospital.pharmacy.controller.PharmacyController;
+import com.hospital.pharmacy.dto.MedicationDTO;
 import com.hospital.pharmacy.model.Medication;
 import com.hospital.pharmacy.service.PharmacyService;
 import org.junit.jupiter.api.BeforeEach;
@@ -67,7 +68,7 @@ public class PharmacyControllerTest {
     @Test
     @WithMockUser
     void create_DeberiaRetornar201_CuandoEsExitoso() throws Exception {
-        when(service.saveMedication(any(Medication.class))).thenReturn(medicationReal);
+        when(service.saveFromDTO(any(MedicationDTO.class))).thenReturn(medicationReal);
 
         mockMvc.perform(post("/api/v1/pharmacy")
                         .with(csrf())
@@ -80,15 +81,15 @@ public class PharmacyControllerTest {
     @Test
     @WithMockUser
     void create_DeberiaRetornar400_CuandoCodigoYaExiste() throws Exception {
-        when(service.saveMedication(any(Medication.class)))
-                .thenThrow(new IllegalArgumentException("El código del medicamento ya está registrado."));
+        when(service.saveFromDTO(any(MedicationDTO.class)))
+                .thenThrow(new IllegalArgumentException("El codigo del medicamento ya esta registrado."));
 
         mockMvc.perform(post("/api/v1/pharmacy")
                         .with(csrf())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(medicationJson))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string("El código del medicamento ya está registrado."));
+                .andExpect(content().string("El codigo del medicamento ya esta registrado."));
     }
 
     @Test
@@ -126,13 +127,13 @@ public class PharmacyControllerTest {
     @WithMockUser
     void dispense_DeberiaRetornar404_CuandoMedicamentoNoExiste() throws Exception {
         when(service.dispenseMedication(anyString(), anyInt()))
-                .thenThrow(new RuntimeException("Medicamento no encontrado con código: DESC-99"));
+                .thenThrow(new RuntimeException("Medicamento no encontrado con codigo: DESC-99"));
 
         mockMvc.perform(post("/api/v1/pharmacy/dispense")
                         .with(csrf())
                         .param("code", "DESC-99")
                         .param("quantity", "10"))
                 .andExpect(status().isNotFound())
-                .andExpect(content().string("Medicamento no encontrado con código: DESC-99"));
+                .andExpect(content().string("Medicamento no encontrado con codigo: DESC-99"));
     }
 }

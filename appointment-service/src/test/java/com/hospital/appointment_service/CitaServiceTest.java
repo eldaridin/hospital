@@ -4,6 +4,8 @@ package com.hospital.appointment_service;
 import com.hospital.appointment_service.client.DoctorClient;
 import com.hospital.appointment_service.client.PacienteClient;
 import com.hospital.appointment_service.dto.CitaDTO;
+import com.hospital.appointment_service.dto.DoctorResponseDTO;
+import com.hospital.appointment_service.dto.PacienteResponseDTO;
 import com.hospital.appointment_service.model.Cita;
 import com.hospital.appointment_service.repository.CitaRepository;
 import com.hospital.appointment_service.service.CitaService;
@@ -87,8 +89,13 @@ public class CitaServiceTest {
         when(mockCitaDTO.getMotivo()).thenReturn("Dolor de cabeza");
         when(mockCitaDTO.getEstado()).thenReturn("Pendiente");
 
-        when(pacienteClient.obtenerPacientePorId(10L)).thenReturn(new Object());
-        when(doctorClient.obtenerDoctorPorId(20L)).thenReturn(new Object());
+        PacienteResponseDTO pacienteMock = new PacienteResponseDTO();
+        pacienteMock.setId(10L);
+        DoctorResponseDTO doctorMock = new DoctorResponseDTO();
+        doctorMock.setId(20L);
+
+        when(pacienteClient.obtenerPacientePorId(10L)).thenReturn(pacienteMock);
+        when(doctorClient.obtenerDoctorPorId(20L)).thenReturn(doctorMock);
 
         when(citaRepository.existsByDoctorIdAndFechaAndHora(eq(20L), any(LocalDate.class), any(LocalTime.class))).thenReturn(false);
         when(citaRepository.save(any(Cita.class))).thenReturn(mockCita);
@@ -121,8 +128,13 @@ public class CitaServiceTest {
         when(mockCitaDTO.getFecha()).thenReturn("2026-12-01");
         when(mockCitaDTO.getHora()).thenReturn("10:30");
 
-        when(pacienteClient.obtenerPacientePorId(10L)).thenReturn(new Object());
-        when(doctorClient.obtenerDoctorPorId(20L)).thenReturn(new Object());
+        PacienteResponseDTO pacienteMock = new PacienteResponseDTO();
+        pacienteMock.setId(10L);
+        DoctorResponseDTO doctorMock = new DoctorResponseDTO();
+        doctorMock.setId(20L);
+
+        when(pacienteClient.obtenerPacientePorId(10L)).thenReturn(pacienteMock);
+        when(doctorClient.obtenerDoctorPorId(20L)).thenReturn(doctorMock);
 
         when(citaRepository.existsByDoctorIdAndFechaAndHora(eq(20L), any(LocalDate.class), any(LocalTime.class))).thenReturn(true);
 

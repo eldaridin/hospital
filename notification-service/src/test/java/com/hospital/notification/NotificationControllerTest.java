@@ -2,6 +2,7 @@ package com.hospital.notification;
 
 import com.hospital.notification.config.JwtTokenProvider;
 import com.hospital.notification.controller.NotificationController;
+import com.hospital.notification.dto.NotificationDTO;
 import com.hospital.notification.model.NotificationLog;
 import com.hospital.notification.service.NotificationService;
 import org.junit.jupiter.api.BeforeEach;
@@ -56,7 +57,7 @@ public class NotificationControllerTest {
     @Test
     @WithMockUser
     void dispatchNotification_DeberiaRetornar201() throws Exception {
-        when(service.sendNotification(any(NotificationLog.class))).thenReturn(notificationReal);
+        when(service.sendFromDTO(any(NotificationDTO.class))).thenReturn(notificationReal);
 
         mockMvc.perform(post("/api/v1/notifications")
                         .with(csrf())

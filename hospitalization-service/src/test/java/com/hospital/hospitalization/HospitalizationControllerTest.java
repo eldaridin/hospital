@@ -2,6 +2,7 @@ package com.hospital.hospitalization;
 
 import com.hospital.hospitalization.config.JwtTokenProvider;
 import com.hospital.hospitalization.controller.HospitalizationController;
+import com.hospital.hospitalization.dto.HospitalizationDTO;
 import com.hospital.hospitalization.model.Hospitalization;
 import com.hospital.hospitalization.service.HospitalizationService;
 import org.junit.jupiter.api.BeforeEach;
@@ -58,7 +59,7 @@ public class HospitalizationControllerTest {
     @Test
     @WithMockUser
     void admitPatient_DeberiaRetornar201_CuandoEsExitoso() throws Exception {
-        when(service.registerAdmission(any(Hospitalization.class))).thenReturn(hospitalizationReal);
+        when(service.registerAdmissionFromDTO(any(HospitalizationDTO.class))).thenReturn(hospitalizationReal);
 
         mockMvc.perform(post("/api/v1/hospitalizations/admission")
                         .with(csrf())
