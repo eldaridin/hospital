@@ -1,4 +1,4 @@
-package com.hospital.patient_service.exception;
+package hospital.inventory_service.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
