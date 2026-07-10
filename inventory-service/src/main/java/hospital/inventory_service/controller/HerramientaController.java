@@ -1,8 +1,12 @@
 package hospital.inventory_service.controller;
 
+import hospital.inventory_service.dto.HerramientaDTO;
 import hospital.inventory_service.model.Herramienta;
 import hospital.inventory_service.service.HerramientaService;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,37 +15,59 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/inventario")
 public class HerramientaController {
-    @Autowired
-    private HerramientaService herramientaService;
+
+    private static final Logger logger = LoggerFactory.getLogger(HerramientaController.class);
+
+    private final HerramientaService herramientaService;
+
+    public HerramientaController(HerramientaService herramientaService) {
+        this.herramientaService = herramientaService;
+    }
 
     @GetMapping
-    public List<Herramienta> findAll() {
-        return herramientaService.findAll();
+    public ResponseEntity<List<Herramienta>> findAll() {
+        logger.info("GET /api/inventario");
+        return ResponseEntity.ok(herramientaService.findAll());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Herramienta> findById(@PathVariable Integer id) {
-        Herramienta herramienta = herramientaService.findById(id);
-        if (herramienta == null) {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(herramienta);
+        logger.info("GET /api/inventario/{}", id);
+        return herramientaService.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
-
     @PostMapping
-    public Herramienta save(@RequestBody Herramienta herramienta) {
-        return herramientaService.save(herramienta);
+    public ResponseEntity<?> save(@Valid @RequestBody HerramientaDTO dto) {
+        logger.info("POST /api/inventario");
+        try {
+            Herramienta creado = herramientaService.saveFromDTO(dto);
+            return ResponseEntity.status(HttpStatus.CREATED).body(creado);
+        } catch (RuntimeException e) {
+            logger.error("Error al crear herramienta: {}", e.getMessage());
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Herramienta> update(@PathVariable Integer id, @RequestBody Herramienta herramienta) {
-        herramienta.setId(id);
-        return ResponseEntity.ok(herramientaService.save(herramienta));
+    public ResponseEntity<?> update(@PathVariable Integer id, @Valid @RequestBody HerramientaDTO dto) {
+        logger.info("PUT /api/inventario/{}", id);
+        try {
+            Herramienta actualizado = herramientaService.updateFromDTO(id, dto);
+            return ResponseEntity.ok(actualizado);
+        } catch (RuntimeException e) {
+            logger.error("Error al actualizar herramienta: {}", e.getMessage());
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Integer id) {
-        herramientaService.deleteById(id);
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+        logger.info("DELETE /api/inventario/{}", id);
+        if (herramientaService.deleteById(id)) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
     }
 }
