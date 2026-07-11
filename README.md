@@ -165,7 +165,7 @@ hospital/
 - Calificaciones y experiencia
 - Gestión de departamentos
 
-#### 🔐 Auth Service (Kotlin)
+#### 🔐 Auth Service 
 - Autenticación basada en JWT
 - **Secret**: `ClaveHospital123`
 - **Expiración de token**: 1 hora
