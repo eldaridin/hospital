@@ -6,13 +6,13 @@ spring:
     name: hospitalization-service
 
   datasource:
-    # URL limpia de parámetros MySQL, usando el formato correcto para H2
+
     url: jdbc:h2:mem:hospitalizationdb;MODE=MySQL;DB_CLOSE_DELAY=-1
     driver-class-name: org.h2.Driver
     username: sa
     password:
   
-  # Consola web de H2
+
   h2:
     console:
       enabled: true
@@ -21,13 +21,13 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      # Como no tienes Flyway en este, 'update' es perfecto para que cree las tablas
+
       ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
 
-# Tu configuración de Swagger se mantiene intacta
+
 springdoc:
   api-docs:
     path: /api-docs

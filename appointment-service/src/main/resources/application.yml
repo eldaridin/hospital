@@ -6,13 +6,13 @@ spring:
     name: appointment-service
 
   datasource:
-    # Base de datos en memoria con modo de compatibilidad para MySQL
+
     url: jdbc:h2:mem:appointment_db;MODE=MySQL;DB_CLOSE_DELAY=-1
     username: sa
     password:
     driver-class-name: org.h2.Driver
 
-  # Configuración útil para ver la base de datos desde el navegador
+
   h2:
     console:
       enabled: true
